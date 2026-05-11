@@ -12,3 +12,6 @@ data/pulls/
 data/factors/
 *.ipynb_checkpoints
 .DS_Store
+
+# PDFs — tracked locally, not in repo (copyright + binary)
+papers/*.pdf
