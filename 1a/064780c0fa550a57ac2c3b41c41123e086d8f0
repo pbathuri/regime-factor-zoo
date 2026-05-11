@@ -1,0 +1,19 @@
+.gitignore
+  s_1b772137ce7fe5::t_e89682765f95b2 15-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "1a064780c0fa550a57ac2c3b41c41123e086d8f0",
+  "prompts": {},
+  "sessions": {
+    "s_1b772137ce7fe5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "111272f6-76e6-4d0d-89d7-c562d80b3461",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "pbathuri <taaffeite.aart@gmail.com>"
+    }
+  }
+}
