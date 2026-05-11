@@ -1,0 +1,27 @@
+notes/baba_yara_2026_sparsity.md
+  s_1b772137ce7fe5::t_0804569f1bfc8b 1-27
+notes/cochrane_2011_discount_rates.md
+  s_1b772137ce7fe5::t_33fe4636adc781 1-24
+papers/DOWNLOAD_CHECKLIST.md
+  s_1b772137ce7fe5::t_cc8e2f291500fb 1-31
+notes/fama_french_1993.md
+  s_1b772137ce7fe5::t_35f13d948e527c 1-24
+papers/papers.bib
+  s_1b772137ce7fe5::t_e27daa687f2558 1-90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "b95ce155e087db3aebdedd0d92469282a9ba4d8b",
+  "prompts": {},
+  "sessions": {
+    "s_1b772137ce7fe5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "111272f6-76e6-4d0d-89d7-c562d80b3461",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "pbathuri <taaffeite.aart@gmail.com>"
+    }
+  }
+}
