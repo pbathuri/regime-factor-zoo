@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "regime-factor-zoo"
+version = "0.1.0"
+description = "Regime-stable ML factor zoo on CRSP/Compustat"
+requires-python = ">=3.11"
+dependencies = [
+    "wrds",
+    "pandas",
+    "numpy",
+    "scipy",
+    "statsmodels",
+    "scikit-learn",
+    "xgboost",
+    "pymc",
+    "matplotlib",
+    "seaborn",
+    "pyarrow",
+    "fastparquet",
+    "python-dotenv",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "jupyter", "black", "ruff"]
