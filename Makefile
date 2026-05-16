@@ -1,7 +1,7 @@
 .PHONY: data run clean test
 
 data:
-	python src/data/wrds_pull.py
+	python src/data/download_factors.py
 
 run:
 	python src/factors/fama_french.py
