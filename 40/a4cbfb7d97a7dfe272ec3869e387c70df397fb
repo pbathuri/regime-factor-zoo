@@ -1,0 +1,31 @@
+.env.example
+  s_65248483f77406::t_2c8f411c9ca779 1-7
+src/data/wrds_pull_compustat.py
+  s_65248483f77406::t_a6ebfe01a9aefb 1-130
+README.md
+  s_65248483f77406::t_9aea0caf09db3f 3,11-13,16,22-37,40,42-61,63,67-88,91-117,119,121,125
+src/data/wrds_pull_ff.py
+  s_65248483f77406::t_f42050c610f48e 1-88
+src/data/wrds_pull_all.py
+  s_65248483f77406::t_53b2bcd90d63a3 1-47
+pyproject.toml
+  s_65248483f77406::t_afd6fc95ff2d3e 3-7
+src/data/wrds_connect.py
+  s_65248483f77406::t_b20a6438a64e24 1-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.10",
+  "base_commit_sha": "40a4cbfb7d97a7dfe272ec3869e387c70df397fb",
+  "prompts": {},
+  "sessions": {
+    "s_65248483f77406": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "94e55690-9da8-450a-acf4-89a0ce429ea7",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "pbathuri <taaffeite.aart@gmail.com>"
+    }
+  }
+}
