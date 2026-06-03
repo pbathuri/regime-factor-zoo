@@ -1,0 +1,14 @@
+src/data/characteristics.py
+  h_ec613b3074a81b 3-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "32df9b56c967f2abc8c20c643db0a211e799dbdf",
+  "prompts": {},
+  "humans": {
+    "h_ec613b3074a81b": {
+      "author": "pbathuri <taaffeite.aart@gmail.com>"
+    }
+  }
+}
