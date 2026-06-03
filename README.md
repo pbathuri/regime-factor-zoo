@@ -94,7 +94,7 @@ regime-factor-zoo/
 |-----------|--------|------|
 | Repo skeleton + venv + public-data layer | May 16 | ✅ |
 | WRDS integration + dual-track data layer | May 19 | ✅ |
-| FF3 reproduction ±1% vs Ken French | May 31 | ☐ |
+| FF3 reproduction ±1% vs Ken French | May 31 | ~ |
 | Fama-MacBeth table + Newey-West SE | Jun 14 | ☐ |
 | Lasso/Ridge/EN OOS with TS-CV | Jun 28 | ☐ |
 | XGBoost + sparse-Bayesian | Jul 12 | ☐ |
