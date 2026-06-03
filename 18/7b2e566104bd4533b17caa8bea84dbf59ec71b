@@ -1,0 +1,14 @@
+README.md
+  h_ec613b3074a81b 97
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "187b2e566104bd4533b17caa8bea84dbf59ec71b",
+  "prompts": {},
+  "humans": {
+    "h_ec613b3074a81b": {
+      "author": "pbathuri <taaffeite.aart@gmail.com>"
+    }
+  }
+}
