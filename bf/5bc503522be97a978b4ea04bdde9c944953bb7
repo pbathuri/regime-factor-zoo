@@ -1,0 +1,14 @@
+src/factors/fama_french.py
+  h_ec613b3074a81b 2,4-11,13-105
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "bf5bc503522be97a978b4ea04bdde9c944953bb7",
+  "prompts": {},
+  "humans": {
+    "h_ec613b3074a81b": {
+      "author": "pbathuri <taaffeite.aart@gmail.com>"
+    }
+  }
+}
