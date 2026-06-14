@@ -1,0 +1,21 @@
+notes/ff3_replication_guide.md
+  s_69a9dfb5955365::t_99013f569e7167 1-263
+notes/fama_french_1993.md
+  s_69a9dfb5955365::t_382cdd3841811a 10-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "88b7543b1ab89c1ac529521f47242257e49949de",
+  "prompts": {},
+  "sessions": {
+    "s_69a9dfb5955365": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0e3c24fc-8b58-41fa-9197-aa7097e4ce32",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "pbathuri <taaffeite.aart@gmail.com>"
+    }
+  }
+}
