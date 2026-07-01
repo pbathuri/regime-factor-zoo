@@ -1,0 +1,21 @@
+learning/pipeline_walkthrough.md
+  s_eeaddfdfb5e7c3::t_c974cd323a3330 1-325
+learning/pandas_numpy_cheatsheet.csv
+  s_eeaddfdfb5e7c3::t_4f2411109c3965 1-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "6eeb2f0cc4965b9f9d1c2ec7fbe773e4d50463af",
+  "prompts": {},
+  "sessions": {
+    "s_eeaddfdfb5e7c3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "71635945-7626-410a-b755-ace2c7e24b67",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "pbathuri <taaffeite.aart@gmail.com>"
+    }
+  }
+}
