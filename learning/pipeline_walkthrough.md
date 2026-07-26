@@ -303,15 +303,68 @@ gets the finer 3-way cut; size gets a simple median split.
 
 ---
 
-## Sections 9–10 (preview)
+## Sections 9–10 — DONE and validated
 
-- **9 — value-weighted monthly returns:** hold each June-formed portfolio for 12
-  months (Jul *t* → Jun *t+1*); weight each stock by **prior-month** ME
-  (`series.shift(1)` — the look-ahead guard again). The "formation date ≠ return date"
-  panel pattern is the most reusable skill in the whole project.
-- **10 — SMB & HML + validation:** SMB = avg(small 3) − avg(big 3);
-  HML = avg(high-BM 2) − avg(low-BM 2); then `series.corr()` your factors against Ken
-  French's published series. **Target correlation > 0.95** = the payoff milestone.
+- **9 — value-weighted monthly returns:** held each June-formed portfolio for 12
+  months using the calendar rule `form_year = year if month>=7 else year-1`
+  (the "formation date ≠ return date" panel pattern), value-weighting each portfolio
+  by June ME via `np.average(ret, weights=me_june)`. Produced a 726×6 matrix of
+  monthly portfolio returns.
+- **10 — SMB & HML + validation:** SMB = avg(SL,SM,SH) − avg(BL,BM,BH);
+  HML = avg(SH,BH) − avg(SL,BL). Aligned to Ken French via `PeriodIndex` and compared
+  with `series.corr()`.
+  **Result: SMB corr = 0.976, HML corr = 0.965 over 726 months (1964–2024).** Both
+  clear the 0.95 win condition — a genuine from-scratch FF3 replication. The ~3% gap
+  from 1.00 is convention (frozen vs drifting value weights, delisting/microcap
+  screens, breakpoint timing), not error.
+
+**Phase 1 is complete.** The repo now contains SMB, HML, and Mkt-RF built from raw
+CRSP prices + Compustat balance sheets, validated against the published series.
+
+---
+
+## Phase 2 — Fama-MacBeth: is the risk *priced*? (concepts, to build)
+
+Phase 1 proved the factors exist. Phase 2 asks whether **bearing** their risk is
+**rewarded** — do assets more exposed to a factor earn more, on average, across the
+cross-section? A factor can be real yet command no premium.
+
+**The two-pass method** (Fama & MacBeth 1973, *Journal of Political Economy*):
+
+1. **Pass 1 — time-series (once).** For each of the 25 size-B/M test portfolios,
+   regress its returns on the 3 factors over the whole history. The slopes are that
+   portfolio's **betas** — how sensitive it is to each factor. (FF3 regression, run 25
+   times.) *Sanity:* small-value portfolio → high SMB and HML betas.
+
+2. **Pass 2 — cross-sectional (every month).** For each month, take that month's 25
+   returns as the **outcome (y)** and the Pass-1 betas as the **regressors (x)**; the
+   estimated slopes are the **λ's (lambdas)** — the price the market paid for each
+   factor's risk that month. Do this for all ~726 months → a *time series* of λ's.
+   NOTE: λ is the *output* of the regression (the slope), not the outcome variable.
+
+3. **Aggregate + inference.** Average each factor's λ. Test whether it's reliably
+   nonzero. **Do not** use `mean/(std/√T)` — the monthly λ's are autocorrelated, so
+   that naive standard error is too small and the t-stat too big (you'd falsely call a
+   factor "priced"). Use **Newey-West** HAC standard errors (Newey & West 1987,
+   *Econometrica*), which correct the variance by adding lagged autocovariances with
+   declining weights (also handles heteroskedasticity — hence "HAC").
+
+**What "priced" means:** a positive, significant average λ on HML says value exposure
+is *compensated* across assets — the empirical content of "the value premium is real."
+
+**Test assets:** the 25 portfolios (`25_portfolios_5x5_vw.parquet`) — designed for
+exactly this (Fama & French 1993). **Modern framing:** λ = price of risk
+(Cochrane, *Asset Pricing* 2005, ch. 12; Cochrane 2011 AFA "Discount Rates").
+**Why it's the floor for later phases:** the factor-zoo / sparse-selection work
+(Phases 3–4, Baba-Yara) is literally "of hundreds of candidate factors, which λ's are
+nonzero?" — unanswerable until you can estimate one λ correctly.
+
+**Milestones:** M1 = 25×3 beta matrix · M2 = monthly λ series · M3 = Newey-West
+t-stats · M4 = clean (λ, t-stat) results table for the memo.
+
+**Likely new tools:** `statsmodels` OLS (`sm.OLS`, `sm.add_constant`,
+`.fit(cov_type="HAC", cov_kwds={"maxlags":k})`, `.params`, `.tvalues`), and a
+`groupby("date").apply(...)` to run one cross-sectional regression per month.
 
 ---
 

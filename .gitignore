@@ -15,3 +15,9 @@ data/factors/
 
 # PDFs — tracked locally, not in repo (copyright + binary)
 papers/*.pdf
+
+# Knit/render build byproducts (regenerable from the .md source)
+learning/*.html
+learning/*.log
+learning/*.tex
+.Rhistory

@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Next Session — Continuation Plan
 *Written end of session, post-ARPM-bootcamp return. Read this first when you wake up.*
 
