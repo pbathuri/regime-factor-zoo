@@ -1,0 +1,25 @@
+.gitignore
+  s_eeaddfdfb5e7c3::t_1416973c89e23e 18-23
+learning/pipeline_walkthrough.md
+  s_eeaddfdfb5e7c3::t_bdb4c369852353 306-367
+report/project_audit.md
+  s_eeaddfdfb5e7c3::t_2d3ed73ec8f767 1-232
+learning/pandas_numpy_cheatsheet.csv
+  s_eeaddfdfb5e7c3::t_4ddc4d3c97628e 48-58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "04b2a147e666752fbee691a7fbdf8140dc1dfdf5",
+  "prompts": {},
+  "sessions": {
+    "s_eeaddfdfb5e7c3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "71635945-7626-410a-b755-ace2c7e24b67",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "pbathuri <taaffeite.aart@gmail.com>"
+    }
+  }
+}
