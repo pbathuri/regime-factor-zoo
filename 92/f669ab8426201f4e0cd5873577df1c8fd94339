@@ -1,0 +1,36 @@
+R/00_verify.R
+  h_ec613b3074a81b 1-26
+R/01_source_theirs.R
+  h_ec613b3074a81b 1-6
+R/02_replicate_table3.R
+  h_ec613b3074a81b 1-60
+R/03_seed_experiment.R
+  h_ec613b3074a81b 1-39
+R/04_regime_split.R
+  h_ec613b3074a81b 1-49
+R/05_permutation_null.R
+  h_ec613b3074a81b 1-54
+notebooks/06_In_Search_of_Sparsity_Bayesian_Sparse_Factor_Models.ipynb
+  h_ec613b3074a81b 1-75
+report/REPLICATION_NOTE.md
+  h_ec613b3074a81b 1-22
+src/data/test_assets.py
+  h_ec613b3074a81b 1-29
+src/eval/regime_stability.py
+  h_ec613b3074a81b 1-114
+src/models/sdf.py
+  h_ec613b3074a81b 1-44
+src/regimes/vol_regimes.py
+  h_ec613b3074a81b 1-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "92f669ab8426201f4e0cd5873577df1c8fd94339",
+  "prompts": {},
+  "humans": {
+    "h_ec613b3074a81b": {
+      "author": "pbathuri <taaffeite.aart@gmail.com>"
+    }
+  }
+}
