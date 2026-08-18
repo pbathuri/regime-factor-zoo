@@ -1,125 +1,59 @@
 # RegimeFactorZoo
 
-**Empirical asset pricing meets ML: a regime-stable factor zoo on CRSP/Compustat (with public-data fallback).**
+Does sparse factor selection in asset pricing hold up across volatility regimes?
 
-Replicates and extends Baba-Yara (2026) *In Search of Sparsity* — testing whether sparse factor selections persist across VIX-defined market regimes.
+Undergraduate research project, IU Bloomington, summer 2026.
 
----
+## Replication
 
-## What this does
+Reproduces the continuous spike-and-slab estimator of Bryzgalova, Huang &
+Julliard (2023, JF 78:1) on their 51-factor, 60-portfolio setup, using their
+replication archive. At prior Sharpe ratio 2:
 
-1. **Data layer (dual track):**
-   - **Primary:** CRSP + Compustat + Fama-French via WRDS (academic credentials)
-   - **Fallback:** Ken French Data Library + yfinance (no credentials needed; fully reproducible by any reviewer)
-2. Reproduces Fama-French 3-factor + momentum (validated against Ken French's library)
-3. Runs ML-based factor selection: OLS / Lasso / Ridge / ElasticNet / XGBoost / sparse-Bayesian
-4. **Original contribution:** regime-stability split by VIX percentile + 2008 / 2020 regime breaks
-5. Reports OOS results with proper walk-forward time-series CV + transaction-cost overlay (5 bps/turn)
+- Posterior inclusion probabilities match Table III (BEH_PEAD 0.704, MKT 0.578,
+  CMA* 0.544)
+- BMA risk prices match their published lambda.bma.csv to 1e-14
+- Data check: their OA15 quantity computes to 3.2199 against the 3.219911 in
+  their code comments
 
-## Quickstart
+Details in report/REPLICATION_NOTE.md.
 
-```bash
-# 1. Clone + venv
-git clone https://github.com/pbathuri/regime-factor-zoo.git
-cd regime-factor-zoo
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-pip install -e .
+## Extension (in progress)
 
-# 2a. WRDS path (requires institutional credentials)
-cp .env.example .env
-# Edit .env with your WRDS_USERNAME (password resolved via ~/.pgpass)
-make wrds-test          # smoke test — confirms WRDS connection works
-make wrds-quick         # ~1 min: FF3 + FF5 + momentum from WRDS
-make wrds-data          # ~10-30 min: full CRSP + Compustat + FF pull
+BHJ split their sample by calendar date. This project conditions selection on
+volatility state instead:
 
-# 2b. OR public-data path (no credentials)
-make public-data        # Ken French + yfinance, ~1 min
-```
+- Regime labels from trailing 12-month realized market volatility, with an
+  expanding-percentile threshold so no future information enters the label
+- Same estimator run separately on high-vol (184 months) and low-vol (335)
+- Preliminary: PIP correlation across regimes is 0.24 with the prior held fixed,
+  0.19 with per-regime calibration. Largest gaps are BAB, ROE, UMD, MKT, all
+  weighted more heavily in calm markets.
 
-## First-time WRDS setup (run once)
+This is not yet a result. Two random splits of the same data would also produce
+a correlation below one. The matched-size permutation null
+(R/05_permutation_null.R) has not been run; until it is, the number above means
+nothing on its own.
 
-The `wrds` Python package uses PostgreSQL's `.pgpass` file for credential management. Set it up once interactively:
+## Earlier phases
 
-```bash
-source .venv/bin/activate
-python -c "import wrds; wrds.Connection()"
-```
+FF3 rebuilt from CRSP and validated against Ken French (SMB 0.976, HML 0.965);
+Fama-MacBeth with Newey-West errors on OSAP characteristics. See notebooks/.
 
-Enter your WRDS username + password when prompted. The package writes credentials to `~/.pgpass` so subsequent runs are non-interactive. Add `WRDS_USERNAME=your_user` to `.env` to skip the username prompt.
+## Layout
 
-## Data sources
+    src/data/       WRDS pulls, test-asset construction
+    src/factors/    FF3 from scratch
+    src/regimes/    volatility regime labeling
+    src/models/     penalized SDF (frequentist companion)
+    src/eval/       regime stability, permutation null
+    R/              BHJ replication and regime split
+    notes/          paper reading notes
 
-| Source | What it gives you | When to use |
-|---|---|---|
-| **WRDS / CRSP (msf, dsf)** | Survivorship-bias-free returns, all NYSE/AMEX/NASDAQ common shares since 1962 | Production-quality factor builds |
-| **WRDS / Compustat (funda, fundq)** | Firm fundamentals (book equity, sales, capex, etc.) for FF-style characteristics | Building the factor zoo |
-| **WRDS / CCM linktable** | Joins CRSP `permno` ↔ Compustat `gvkey` | Any CRSP+Compustat join |
-| **WRDS / ff.factors_monthly** | FF3 + UMD factor returns | Quick benchmark; updates more frequently than public CSVs |
-| **Ken French library (pandas-datareader)** | FF3, FF5, momentum, 25 portfolios | No-WRDS reproducibility; reviewer-friendly |
-| **yfinance** | SPY + individual tickers, daily OHLCV | Sanity checks, ETF benchmarks |
-| **FRED** | VIX, treasury rates | Regime-cut covariates |
+## Running it
 
-## Repo layout
+Requires WRDS access and R 4.5 with BayesianFactorZoo (CRAN archive).
+Data directories are gitignored.
 
-```
-regime-factor-zoo/
-├── src/
-│   ├── data/
-│   │   ├── wrds_connect.py          ← connection helper (.env + .pgpass)
-│   │   ├── wrds_pull_crsp.py        ← CRSP monthly + daily
-│   │   ├── wrds_pull_compustat.py   ← Compustat annual + quarterly + link
-│   │   ├── wrds_pull_ff.py          ← FF factors from WRDS
-│   │   ├── wrds_pull_all.py         ← orchestrator
-│   │   ├── download_factors.py      ← public-data fallback (Ken French + yfinance)
-│   │   └── characteristics.py       ← firm characteristic constructors (WIP)
-│   ├── factors/                     ← factor construction (Fama-MacBeth, etc.)
-│   ├── models/                      ← OLS / Lasso / Ridge / XGBoost / Bayesian
-│   ├── eval/                        ← time-series CV, transaction-cost overlay
-│   └── regimes/                     ← VIX-percentile split, structural breaks
-├── data/
-│   ├── pulls/                       ← raw WRDS dumps (gitignored)
-│   └── factors/                     ← constructed factors (gitignored)
-├── notebooks/                       ← exploratory notebooks
-├── derivatives/                     ← optional secondary track (Monte Carlo extension)
-├── notes/                           ← paper notes
-├── papers/                          ← reference PDFs (gitignored)
-├── tests/                           ← pytest
-└── Makefile                         ← `make help` for all targets
-```
-
-## Status
-
-| Milestone | Target | Done |
-|-----------|--------|------|
-| Repo skeleton + venv + public-data layer | May 16 | ✅ |
-| WRDS integration + dual-track data layer | May 19 | ✅ |
-| FF3 reproduction ±1% vs Ken French | May 31 | ~ |
-| Fama-MacBeth table + Newey-West SE | Jun 14 | ☐ |
-| Lasso/Ridge/EN OOS with TS-CV | Jun 28 | ☐ |
-| XGBoost + sparse-Bayesian | Jul 12 | ☐ |
-| Regime-stability extension (VIX split) | Jul 26 | ☐ |
-| Derivatives Monte Carlo branch | Aug 7 | ☐ |
-| **v1.0 public release + memo.pdf** | **Aug 14** | ☐ |
-
-## Reproducibility note
-
-Every result in this repo is derived from a `make`-able pipeline. WRDS users get production-grade panel data; non-WRDS users still reproduce the entire empirical structure from Ken French + yfinance + FRED. No code path requires a paid data subscription.
-
-## References
-
-Core papers (see `papers/papers.bib` and `notes/` for detailed reading notes):
-
-- Cochrane (2011) *Discount Rates* — AFA Presidential Address
-- Fama & French (1993) *Common Risk Factors in Returns on Stocks and Bonds*
-- Hou, Xue, Zhang (2015) *Digesting Anomalies: An Investment Approach*
-- Gu, Kelly, Xiu (2020) *Empirical Asset Pricing via Machine Learning*
-- **Baba-Yara (2026) *In Search of Sparsity: Bayesian Sparse Factor Models and the Factor Zoo*** (anchor paper)
-
-## License
-
-MIT (TBD — finalize before v1.0 public release Aug 14, 2026).
-
----
-
-*Started May 2026. Part of PhD application portfolio (CMU / Stanford GSB / UPenn Wharton target, Fall 2027 applications).*
+    python -m src.regimes.vol_regimes
+    Rscript R/02_replicate_table3.R      # SIM and PSI_IDX via env vars
