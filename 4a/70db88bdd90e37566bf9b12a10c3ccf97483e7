@@ -1,0 +1,14 @@
+.gitignore
+  h_ec613b3074a81b 24-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "4a70db88bdd90e37566bf9b12a10c3ccf97483e7",
+  "prompts": {},
+  "humans": {
+    "h_ec613b3074a81b": {
+      "author": "pbathuri <taaffeite.aart@gmail.com>"
+    }
+  }
+}
