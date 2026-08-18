@@ -27,3 +27,4 @@ data/
 logs/
 report/*.csv
 .venv/
+.vscode/
