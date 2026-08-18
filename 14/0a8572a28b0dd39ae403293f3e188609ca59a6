@@ -1,0 +1,16 @@
+.gitignore
+  h_ec613b3074a81b 30
+requirements.txt
+  h_ec613b3074a81b 1-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "140a8572a28b0dd39ae403293f3e188609ca59a6",
+  "prompts": {},
+  "humans": {
+    "h_ec613b3074a81b": {
+      "author": "pbathuri <taaffeite.aart@gmail.com>"
+    }
+  }
+}
