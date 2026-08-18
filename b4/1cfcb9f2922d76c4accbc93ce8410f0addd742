@@ -1,0 +1,14 @@
+notebooks/02_ff3_validation_and_eda.ipynb
+  h_ec613b3074a81b 39-40,135-136,409
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "b41cfcb9f2922d76c4accbc93ce8410f0addd742",
+  "prompts": {},
+  "humans": {
+    "h_ec613b3074a81b": {
+      "author": "pbathuri <taaffeite.aart@gmail.com>"
+    }
+  }
+}
