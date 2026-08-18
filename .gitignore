@@ -21,3 +21,9 @@ learning/*.html
 learning/*.log
 learning/*.tex
 .Rhistory
+learning/
+notes/.Rhistory
+data/
+logs/
+report/*.csv
+.venv/
