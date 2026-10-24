@@ -1,0 +1,31 @@
+"Quantum Extension/FINAL_WRITEUP.md"
+  s_f2ae1478a7d676::t_9b1a77a2dca010 12,14,38,127
+  s_f2ae1478a7d676::t_c74e453621ecd7 8-11
+  s_f2ae1478a7d676::t_2db5e9585cf86b 95,131
+  s_f2ae1478a7d676::t_61c082d574e705 13,19,28,33,51,55,76,78,82,93,105,115,129
+  s_d2d59f01215fae::t_44e4dbbd7cfb66 17,21-22,25,30-31,35-36,49,53,65,74,80,91,97,99,101-102,113,117,125
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d76629b9702653ad4db0f16227b7c0d1c708aaba",
+  "prompts": {},
+  "sessions": {
+    "s_d2d59f01215fae": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a16be8-e262-7953-abde-4c5c849fd22e",
+        "model": "unknown"
+      },
+      "human_author": "pbathuri <taaffeite.aart@gmail.com>"
+    },
+    "s_f2ae1478a7d676": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a16be8-e262-7953-abde-4c5c849fd22e",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "pbathuri <taaffeite.aart@gmail.com>"
+    }
+  }
+}
