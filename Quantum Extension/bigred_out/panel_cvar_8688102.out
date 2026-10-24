@@ -1,0 +1,46 @@
+building the CRSP-Compustat panel
+firm-months 3090082  permnos 25048  1973-07 to 2024-12
+size q1 high  months=221
+size q1 low  months=385
+size q2 high  months=221
+size q2 low  months=385
+size q3 high  months=221
+size q3 low  months=385
+size q4 high  months=221
+size q4 low  months=385
+size q5 high  months=221
+size q5 low  months=385
+book-to-market q1 high  months=221
+book-to-market q1 low  months=385
+book-to-market q2 high  months=221
+book-to-market q2 low  months=385
+book-to-market q3 high  months=221
+book-to-market q3 low  months=385
+book-to-market q4 high  months=221
+book-to-market q4 low  months=385
+book-to-market q5 high  months=221
+book-to-market q5 low  months=385
+firm-level sample and histogram CVaR
+per-firm amplitude estimation
+size_q1_high              n= 221  sample=0.1701  histogram=0.1641  t=1024 AE=0.1769  bar=0.0027
+size_q1_low               n= 385  sample=0.0934  histogram=0.0845  t=1024 AE=0.0944  bar=0.0012
+size_q2_high              n= 221  sample=0.1816  histogram=0.1801  t=1024 AE=0.1859  bar=0.0027
+size_q2_low               n= 385  sample=0.0962  histogram=0.0952  t=1024 AE=0.0970  bar=0.0008
+size_q3_high              n= 221  sample=0.1685  histogram=0.1616  t=1024 AE=0.1691  bar=0.0024
+size_q3_low               n= 385  sample=0.0907  histogram=0.0855  t=1024 AE=0.0912  bar=0.0011
+size_q4_high              n= 221  sample=0.1509  histogram=0.1445  t=1024 AE=0.1545  bar=0.0023
+size_q4_low               n= 385  sample=0.0825  histogram=0.0712  t=1024 AE=0.0844  bar=0.0012
+size_q5_high              n= 221  sample=0.1330  histogram=0.1169  t=1024 AE=0.1362  bar=0.0018
+size_q5_low               n= 385  sample=0.0715  histogram=0.0688  t=1024 AE=0.0725  bar=0.0010
+book-to-market_q1_high    n= 221  sample=0.1937  histogram=0.1813  t=1024 AE=0.1982  bar=0.0029
+book-to-market_q1_low     n= 385  sample=0.1056  histogram=0.0924  t=1024 AE=0.1064  bar=0.0012
+book-to-market_q2_high    n= 221  sample=0.1679  histogram=0.1640  t=1024 AE=0.1736  bar=0.0030
+book-to-market_q2_low     n= 385  sample=0.0932  histogram=0.0871  t=1024 AE=0.0948  bar=0.0011
+book-to-market_q3_high    n= 221  sample=0.1604  histogram=0.1605  t=1024 AE=0.1647  bar=0.0026
+book-to-market_q3_low     n= 385  sample=0.0862  histogram=0.0808  t=1024 AE=0.0862  bar=0.0011
+book-to-market_q4_high    n= 221  sample=0.1541  histogram=0.1411  t=1024 AE=0.1590  bar=0.0026
+book-to-market_q4_low     n= 385  sample=0.0762  histogram=0.0734  t=1024 AE=0.0774  bar=0.0010
+book-to-market_q5_high    n= 221  sample=0.1711  histogram=0.1453  t=1024 AE=0.1749  bar=0.0030
+book-to-market_q5_low     n= 385  sample=0.0819  histogram=0.0769  t=1024 AE=0.0831  bar=0.0014
+firms >= 60 months  high 6426 median CVaR 0.2744  low 11073 median CVaR 0.2373
+wrote /geode3/home/u070/pbathuri/BigRed200/regime-factor-zoo/Quantum Extension/data/panel_cvar.json

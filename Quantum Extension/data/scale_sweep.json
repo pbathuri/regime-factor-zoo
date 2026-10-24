@@ -1,0 +1,529 @@
+{
+  "machine": "local Mac",
+  "why_not_bigred": "circuits are 1\u20136 qubits; the login node also rejected non-interactive SSH",
+  "why_not_ibm_hardware": "no IBM Quantum account is saved",
+  "noise_model": "FakeKingston snapshot 2026-04-15, Aer, no mitigation",
+  "classical": {
+    "black_scholes": 8.021352235143176,
+    "window_renormalized": 8.017788599093503,
+    "window_abs_error": 0.0035636360496731356,
+    "log10_window_abs_error": -2.44810665639995,
+    "payoff_std": 13.202416773862096,
+    "gauss_hermite": [
+      {
+        "nodes": 4,
+        "price": 8.866720795501783,
+        "abs_error": 0.8453685603586063,
+        "log10_abs_error": -0.07295390781604602
+      },
+      {
+        "nodes": 8,
+        "price": 8.406718260748914,
+        "abs_error": 0.3853660256057374,
+        "log10_abs_error": -0.41412657598658775
+      },
+      {
+        "nodes": 16,
+        "price": 8.191927932751101,
+        "abs_error": 0.17057569760792468,
+        "log10_abs_error": -0.7680828438988392
+      },
+      {
+        "nodes": 32,
+        "price": 8.08804610686909,
+        "abs_error": 0.06669387172591357,
+        "log10_abs_error": -1.1759140700998314
+      },
+      {
+        "nodes": 64,
+        "price": 8.0369566714956,
+        "abs_error": 0.015604436352424145,
+        "log10_abs_error": -1.8067519138588144
+      },
+      {
+        "nodes": 96,
+        "price": 8.020051368479297,
+        "abs_error": 0.0013008666638789634,
+        "log10_abs_error": -2.8857672154362493
+      },
+      {
+        "nodes": 128,
+        "price": 8.01162193301492,
+        "abs_error": 0.009730302128255985,
+        "log10_abs_error": -2.011873674572626
+      },
+      {
+        "nodes": 256,
+        "price": 7.999006721459719,
+        "abs_error": 0.022345513683457163,
+        "log10_abs_error": -1.6508096572342486
+      },
+      {
+        "nodes": 384,
+        "price": 8.012403599940932,
+        "abs_error": 0.008948635202244759,
+        "log10_abs_error": -2.0482431958942855
+      },
+      {
+        "nodes": 512,
+        "price": 8.019746498360886,
+        "abs_error": 0.0016057367822899238,
+        "log10_abs_error": -2.79432564421791
+      }
+    ],
+    "uniform_grid": [
+      {
+        "nodes": 4,
+        "price": 4.017360369243868,
+        "abs_error": 4.003991865899308,
+        "log10_abs_error": 0.6024931865398899
+      },
+      {
+        "nodes": 8,
+        "price": 8.037866505932183,
+        "abs_error": 0.016514270789006247,
+        "log10_abs_error": -1.7821405984365468
+      },
+      {
+        "nodes": 16,
+        "price": 8.008519905101343,
+        "abs_error": 0.012832330041833373,
+        "log10_abs_error": -1.8916944790549433
+      },
+      {
+        "nodes": 32,
+        "price": 7.983625670355102,
+        "abs_error": 0.037726564788074235,
+        "log10_abs_error": -1.4233527379080433
+      },
+      {
+        "nodes": 64,
+        "price": 8.017691750710425,
+        "abs_error": 0.0036604844327516872,
+        "log10_abs_error": -2.4364614357670913
+      },
+      {
+        "nodes": 96,
+        "price": 8.020736148015944,
+        "abs_error": 0.0006160871272324897,
+        "log10_abs_error": -3.210357865432044
+      },
+      {
+        "nodes": 128,
+        "price": 8.018525371402676,
+        "abs_error": 0.0028268637405002295,
+        "log10_abs_error": -2.548695124717075
+      },
+      {
+        "nodes": 256,
+        "price": 8.017888741803036,
+        "abs_error": 0.003463493340140289,
+        "log10_abs_error": -2.460485643119709
+      },
+      {
+        "nodes": 384,
+        "price": 8.01778640180031,
+        "abs_error": 0.0035658333428667532,
+        "log10_abs_error": -2.4478389584025857
+      },
+      {
+        "nodes": 512,
+        "price": 8.01775543297543,
+        "abs_error": 0.003596802167745494,
+        "log10_abs_error": -2.4440834487033842
+      }
+    ],
+    "monte_carlo": [
+      {
+        "paths": 256,
+        "median_abs_error": 0.5735883343324115,
+        "log10_median_abs_error": -0.24139968995284472,
+        "theoretical_stderr": 0.825151048366381,
+        "log10_theoretical_stderr": -0.08346654421676082
+      },
+      {
+        "paths": 1024,
+        "median_abs_error": 0.16918134964671916,
+        "log10_median_abs_error": -0.7716475147718902,
+        "theoretical_stderr": 0.4125755241831905,
+        "log10_theoretical_stderr": -0.384496539880742
+      },
+      {
+        "paths": 4096,
+        "median_abs_error": 0.1334915005817514,
+        "log10_median_abs_error": -0.8745463849956863,
+        "theoretical_stderr": 0.20628776209159524,
+        "log10_theoretical_stderr": -0.6855265355447232
+      },
+      {
+        "paths": 16384,
+        "median_abs_error": 0.08049203620293,
+        "log10_median_abs_error": -1.0942470861441018,
+        "theoretical_stderr": 0.10314388104579762,
+        "log10_theoretical_stderr": -0.9865565312087045
+      },
+      {
+        "paths": 65536,
+        "median_abs_error": 0.03673147430589241,
+        "log10_median_abs_error": -1.4349616398533478,
+        "theoretical_stderr": 0.05157194052289881,
+        "log10_theoretical_stderr": -1.2875865268726856
+      },
+      {
+        "paths": 262144,
+        "median_abs_error": 0.017728039334539147,
+        "log10_median_abs_error": -1.7513392933486438,
+        "theoretical_stderr": 0.025785970261449406,
+        "log10_theoretical_stderr": -1.5886165225366669
+      }
+    ]
+  },
+  "amplitude_estimation": {
+    "theta": 0.7,
+    "amplitude": 0.41501642854987947,
+    "ry": [
+      {
+        "phase_bits": 1,
+        "t": 2,
+        "median_abs_error": 0.41501642854987947,
+        "log10_median_abs_error": -0.3819347112702222,
+        "bound": 4.015341916379235,
+        "log10_bound": 0.6037225324476625,
+        "success_probability": 1.0,
+        "shot_abs_error": 0.5849835714501206,
+        "shot_inside": true
+      },
+      {
+        "phase_bits": 2,
+        "t": 4,
+        "median_abs_error": 0.08498357145012042,
+        "log10_median_abs_error": -1.0706650215580198,
+        "bound": 1.3908206831215328,
+        "log10_bound": 0.14327114052341475,
+        "success_probability": 1.0,
+        "shot_abs_error": 0.08498357145012064,
+        "shot_inside": true
+      },
+      {
+        "phase_bits": 3,
+        "t": 8,
+        "median_abs_error": 0.08498357145012042,
+        "log10_median_abs_error": -1.0706650215580198,
+        "bound": 0.5411977727937451,
+        "log10_bound": -0.266643999334904,
+        "success_probability": 0.9893560694602398,
+        "shot_abs_error": 0.08498357145012064,
+        "shot_inside": true
+      },
+      {
+        "phase_bits": 4,
+        "t": 16,
+        "median_abs_error": 0.08498357145012042,
+        "log10_median_abs_error": -1.0706650215580198,
+        "bound": 0.2320457442051173,
+        "log10_bound": -0.6344263922748262,
+        "success_probability": 0.8281283753442068,
+        "shot_abs_error": 0.08498357145012064,
+        "shot_inside": true
+      },
+      {
+        "phase_bits": 5,
+        "t": 32,
+        "median_abs_error": 0.01256158955794362,
+        "log10_median_abs_error": -1.9009554009997967,
+        "bound": 0.10638458655461983,
+        "log10_bound": -0.9731212898903865,
+        "success_probability": 0.9798464267699802,
+        "shot_abs_error": 0.01256158955794362,
+        "shot_inside": true
+      },
+      {
+        "phase_bits": 6,
+        "t": 64,
+        "median_abs_error": 0.01256158955794362,
+        "log10_median_abs_error": -1.9009554009997967,
+        "bound": 0.050782721890325205,
+        "log10_bound": -1.2942840251978533,
+        "success_probability": 0.8949851297017082,
+        "shot_abs_error": 0.01256158955794362,
+        "shot_inside": true
+      },
+      {
+        "phase_bits": 7,
+        "t": 128,
+        "median_abs_error": 0.01161833422243963,
+        "log10_median_abs_error": -1.934856134412254,
+        "bound": 0.024788968098416426,
+        "log10_bound": -1.6057415514286746,
+        "success_probability": 0.8114647143382014,
+        "shot_abs_error": 0.01161833422243963,
+        "shot_inside": true
+      },
+      {
+        "phase_bits": 8,
+        "t": 256,
+        "median_abs_error": 0.0004973729300301599,
+        "log10_median_abs_error": -3.3033178552913456,
+        "bound": 0.012243885837521668,
+        "log10_bound": -1.9120807284348404,
+        "success_probability": 0.9962770851054205,
+        "shot_abs_error": 0.0004973729300301599,
+        "shot_inside": true
+      },
+      {
+        "phase_bits": 9,
+        "t": 512,
+        "median_abs_error": 0.0004973729300301599,
+        "log10_median_abs_error": -3.3033178552913456,
+        "bound": 0.0060842933658391985,
+        "log10_bound": -2.2157898537752683,
+        "success_probability": 0.9857921884633551,
+        "shot_abs_error": 0.0004973729300301599,
+        "shot_inside": true
+      },
+      {
+        "phase_bits": 10,
+        "t": 1024,
+        "median_abs_error": 0.0004973729300301599,
+        "log10_median_abs_error": -3.3033178552913456,
+        "bound": 0.00303273429468919,
+        "log10_bound": -2.5181656376303656,
+        "success_probability": 0.9495068086254819,
+        "shot_abs_error": 0.0004973729300301599,
+        "shot_inside": true
+      }
+    ],
+    "call_grid_price": 8.008519905101343,
+    "call_scale": 118.26813697724515,
+    "call": [
+      {
+        "phase_bits": 2,
+        "t": 4,
+        "price": 0.0,
+        "abs_error_vs_grid": 8.008519905101343,
+        "abs_error_vs_black_scholes": 8.021352235143176,
+        "log10_abs_error_vs_grid": 0.9035522593498055,
+        "price_bound": 119.63087374192136,
+        "log10_price_bound": 2.0778432746810718,
+        "success_probability": 1.0,
+        "median_inside": true
+      },
+      {
+        "phase_bits": 4,
+        "t": 16,
+        "price": 4.501312937863553,
+        "abs_error_vs_grid": 3.5072069672377904,
+        "abs_error_vs_black_scholes": 3.5200392972796237,
+        "log10_abs_error_vs_grid": 0.5449613952162949,
+        "price_bound": 16.228893530567166,
+        "log10_price_bound": 1.2102889110800923,
+        "success_probability": 0.9211187584939653,
+        "median_inside": true
+      },
+      {
+        "phase_bits": 6,
+        "t": 64,
+        "price": 6.982476041074344,
+        "abs_error_vs_grid": 1.0260438640269989,
+        "abs_error_vs_black_scholes": 1.0388761940688322,
+        "log10_abs_error_vs_grid": 0.011165927537665009,
+        "price_bound": 3.202296826084719,
+        "log10_price_bound": 0.5054615849087208,
+        "success_probability": 0.8430491272274179,
+        "median_inside": true
+      },
+      {
+        "phase_bits": 8,
+        "t": 256,
+        "price": 7.6822847653404995,
+        "abs_error_vs_grid": 0.3262351397608434,
+        "abs_error_vs_black_scholes": 0.33906746980267677,
+        "log10_abs_error_vs_grid": -0.4864692616210158,
+        "price_bound": 0.7471412967363625,
+        "log10_price_bound": -0.1265972581711632,
+        "success_probability": 0.8147121635746291,
+        "median_inside": true
+      },
+      {
+        "phase_bits": 10,
+        "t": 1024,
+        "price": 8.043838442417806,
+        "abs_error_vs_grid": 0.035318537316463505,
+        "abs_error_vs_black_scholes": 0.022486207274630132,
+        "log10_abs_error_vs_grid": -1.4519972906137872,
+        "price_bound": 0.1834457673225396,
+        "log10_price_bound": -0.7364923043477796,
+        "success_probability": 0.9335445790480416,
+        "median_inside": true
+      }
+    ]
+  },
+  "cvar": {
+    "closed_form": 2.0627128075074275,
+    "histogram": [
+      {
+        "qubits": 3,
+        "bins": 8,
+        "returned_cvar": 1.6379962779136894,
+        "abs_error": 0.42471652959373807,
+        "log10_abs_error": -0.37190083632118265,
+        "sample_cvar": 2.060612524603482
+      },
+      {
+        "qubits": 4,
+        "bins": 16,
+        "returned_cvar": 1.957551607402213,
+        "abs_error": 0.10516120010521446,
+        "log10_abs_error": -0.9781444663456449,
+        "sample_cvar": 2.060612524603482
+      },
+      {
+        "qubits": 5,
+        "bins": 32,
+        "returned_cvar": 1.9303992868619033,
+        "abs_error": 0.13231352064552415,
+        "log10_abs_error": -0.8783957745448019,
+        "sample_cvar": 2.060612524603482
+      },
+      {
+        "qubits": 6,
+        "bins": 64,
+        "returned_cvar": 2.0256139946501586,
+        "abs_error": 0.037098812857268904,
+        "log10_abs_error": -1.4306399873603244,
+        "sample_cvar": 2.060612524603482
+      },
+      {
+        "qubits": 7,
+        "bins": 128,
+        "returned_cvar": 2.0249100323947866,
+        "abs_error": 0.03780277511264085,
+        "log10_abs_error": -1.4224763173091273,
+        "sample_cvar": 2.060612524603482
+      },
+      {
+        "qubits": 8,
+        "bins": 256,
+        "returned_cvar": 2.0485992297545965,
+        "abs_error": 0.014113577752830953,
+        "log10_abs_error": -1.8503628798421319,
+        "sample_cvar": 2.060612524603482
+      }
+    ]
+  },
+  "noisy": {
+    "call": [
+      {
+        "nodes": 4,
+        "qubits": 3,
+        "depth": 33,
+        "cz": 7,
+        "discrete_price": 4.017360369243869,
+        "marked_probability": 0.0339682392225119,
+        "mean_ideal_price": 3.981010592221112,
+        "mean_noisy_price": 5.688189205204418,
+        "mean_noisy_frequency": 0.048095703125,
+        "abs_error_vs_black_scholes": 2.333163029938758,
+        "log10_abs_error_vs_black_scholes": 0.3679450862129757
+      },
+      {
+        "nodes": 8,
+        "qubits": 4,
+        "depth": 87,
+        "cz": 23,
+        "discrete_price": 8.037866505932183,
+        "marked_probability": 0.06796307704989614,
+        "mean_ideal_price": 8.03420632664025,
+        "mean_noisy_price": 10.585951103340456,
+        "mean_noisy_frequency": 0.089508056640625,
+        "abs_error_vs_black_scholes": 2.5645988681972796,
+        "log10_abs_error_vs_black_scholes": 0.4090194462697197
+      },
+      {
+        "nodes": 16,
+        "qubits": 5,
+        "depth": 195,
+        "cz": 62,
+        "discrete_price": 8.008519905101343,
+        "marked_probability": 0.06771494089436943,
+        "mean_ideal_price": 7.860961985364988,
+        "mean_noisy_price": 12.816471997259447,
+        "mean_noisy_frequency": 0.108367919921875,
+        "abs_error_vs_black_scholes": 4.79511976211627,
+        "log10_abs_error_vs_black_scholes": 0.6807994585091245
+      },
+      {
+        "nodes": 32,
+        "qubits": 6,
+        "depth": 435,
+        "cz": 132,
+        "discrete_price": 7.983625670355103,
+        "marked_probability": 0.06750445110918722,
+        "mean_ideal_price": 7.850134214035284,
+        "mean_noisy_price": 17.7611542378242,
+        "mean_noisy_frequency": 0.150177001953125,
+        "abs_error_vs_black_scholes": 9.739802002681024,
+        "log10_abs_error_vs_black_scholes": 0.9885501283347675
+      }
+    ],
+    "amplification": [
+      {
+        "m": 0,
+        "ideal_formula": 0.41501642854987947,
+        "mean_ideal_frequency": 0.4148406982421875,
+        "mean_noisy_frequency": 0.417083740234375,
+        "cz": 0,
+        "depth": 5
+      },
+      {
+        "m": 1,
+        "ideal_formula": 0.74513041067035,
+        "mean_ideal_frequency": 0.7479400634765625,
+        "mean_noisy_frequency": 0.7432098388671875,
+        "cz": 0,
+        "depth": 9
+      },
+      {
+        "m": 2,
+        "ideal_formula": 0.12304887282834767,
+        "mean_ideal_frequency": 0.12335205078125,
+        "mean_noisy_frequency": 0.131439208984375,
+        "cz": 0,
+        "depth": 13
+      },
+      {
+        "m": 4,
+        "ideal_formula": 0.0002827072494976155,
+        "mean_ideal_frequency": 0.00030517578125,
+        "mean_noisy_frequency": 0.0123443603515625,
+        "cz": 0,
+        "depth": 21
+      },
+      {
+        "m": 8,
+        "ideal_formula": 0.3820934895247404,
+        "mean_ideal_frequency": 0.38275146484375,
+        "mean_noisy_frequency": 0.38623046875,
+        "cz": 0,
+        "depth": 37
+      },
+      {
+        "m": 12,
+        "ideal_formula": 0.9518461025457534,
+        "mean_ideal_frequency": 0.95355224609375,
+        "mean_noisy_frequency": 0.9404144287109375,
+        "cz": 0,
+        "depth": 53
+      },
+      {
+        "m": 16,
+        "ideal_formula": 0.8013604235039274,
+        "mean_ideal_frequency": 0.8047943115234375,
+        "mean_noisy_frequency": 0.794708251953125,
+        "cz": 0,
+        "depth": 69
+      }
+    ],
+    "shots": 4096
+  }
+}

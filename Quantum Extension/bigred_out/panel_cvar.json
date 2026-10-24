@@ -1,0 +1,1039 @@
+{
+  "machine": "local Mac",
+  "alpha": 0.95,
+  "units": "decimal monthly return",
+  "coverage": {
+    "crsp_file": "data/pulls/crsp_monthly.parquet",
+    "compustat_file": "data/pulls/compustat_annual.parquet",
+    "months": 618,
+    "first_month": "1973-07",
+    "last_month": "2024-12",
+    "firm_months": 3090082,
+    "permnos": 25048,
+    "with_size_quintile": 2890069,
+    "with_bm_quintile": 2498003,
+    "high_firm_months": 1100382,
+    "low_firm_months": 1989700,
+    "delisting_return": "not in the CRSP pull",
+    "new_wrds_query": false
+  },
+  "portfolios": [
+    {
+      "slice": "size_q1_high",
+      "months": 221,
+      "mean_return": 0.020497993992217342,
+      "sample_var": 0.11471040987983978,
+      "sample_cvar": 0.17007933727245436,
+      "histogram_cvar": 0.16407277679698257,
+      "discrete_cvar": 0.17725096524997536,
+      "propagation_factor": 3.141519451688111,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.2342773745235323,
+          "error_vs_discrete": 0.057026409273556955,
+          "propagated_bar": 0.2934387880896466,
+          "median_inside": true,
+          "success_probability": 0.9063977983480844
+        },
+        {
+          "t": 64,
+          "cvar": 0.18234679632005246,
+          "error_vs_discrete": 0.005095831070077106,
+          "propagated_bar": 0.05065055087508098,
+          "median_inside": true,
+          "success_probability": 0.9739242479986164
+        },
+        {
+          "t": 256,
+          "cvar": 0.18234679632005246,
+          "error_vs_discrete": 0.005095831070077106,
+          "propagated_bar": 0.01124331608456208,
+          "median_inside": true,
+          "success_probability": 0.8131887614491052
+        },
+        {
+          "t": 1024,
+          "cvar": 0.1768645563544376,
+          "error_vs_discrete": -0.0003864088955377598,
+          "propagated_bar": 0.002722121419002509,
+          "median_inside": true,
+          "success_probability": 0.9601754899012783
+        }
+      ],
+      "portfolio_months": 221
+    },
+    {
+      "slice": "size_q1_low",
+      "months": 385,
+      "mean_return": 0.009518318197405425,
+      "sample_var": 0.06775035580800469,
+      "sample_cvar": 0.09341027637595095,
+      "histogram_cvar": 0.08446096968796665,
+      "discrete_cvar": 0.09404245013337581,
+      "propagation_factor": 1.4716654624447745,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.12376228730214948,
+          "error_vs_discrete": 0.029719837168773675,
+          "propagated_bar": 0.13329037824013876,
+          "median_inside": true,
+          "success_probability": 0.8910233590000709
+        },
+        {
+          "t": 64,
+          "cvar": 0.09943506617169248,
+          "error_vs_discrete": 0.005392616038316672,
+          "propagated_bar": 0.022684345591473053,
+          "median_inside": true,
+          "success_probability": 0.8940923336688118
+        },
+        {
+          "t": 256,
+          "cvar": 0.09440511224936622,
+          "error_vs_discrete": 0.0003626621159904114,
+          "propagated_bar": 0.005006195837333161,
+          "median_inside": true,
+          "success_probability": 0.9879445064333839
+        },
+        {
+          "t": 1024,
+          "cvar": 0.09440511224936622,
+          "error_vs_discrete": 0.0003626621159904114,
+          "propagated_bar": 0.0012099932992998463,
+          "median_inside": true,
+          "success_probability": 0.8710164830077717
+        }
+      ],
+      "portfolio_months": 385
+    },
+    {
+      "slice": "size_q2_high",
+      "months": 221,
+      "mean_return": 0.017882679328084496,
+      "sample_var": 0.12299377040816327,
+      "sample_cvar": 0.18156347359802294,
+      "histogram_cvar": 0.1800712793525832,
+      "discrete_cvar": 0.18577091651669358,
+      "propagation_factor": 3.1814355308825166,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.24407995035615315,
+          "error_vs_discrete": 0.05830903383945957,
+          "propagated_bar": 0.2964122417374333,
+          "median_inside": true,
+          "success_probability": 0.90503682963663
+        },
+        {
+          "t": 64,
+          "cvar": 0.19148954333287477,
+          "error_vs_discrete": 0.005718626816181183,
+          "propagated_bar": 0.05110537236010529,
+          "median_inside": true,
+          "success_probability": 0.968443036289608
+        },
+        {
+          "t": 256,
+          "cvar": 0.1806158260815324,
+          "error_vs_discrete": -0.005155090435161186,
+          "propagated_bar": 0.011338987585385507,
+          "median_inside": true,
+          "success_probability": 0.811379396104961
+        },
+        {
+          "t": 1024,
+          "cvar": 0.18593764614310565,
+          "error_vs_discrete": 0.00016672962641206546,
+          "propagated_bar": 0.002744912177306326,
+          "median_inside": true,
+          "success_probability": 0.9918934460886638
+        }
+      ],
+      "portfolio_months": 221
+    },
+    {
+      "slice": "size_q2_low",
+      "months": 385,
+      "mean_return": 0.008447523484644986,
+      "sample_var": 0.07533835012912686,
+      "sample_cvar": 0.09619176172851532,
+      "histogram_cvar": 0.09520528064913758,
+      "discrete_cvar": 0.09701136524186582,
+      "propagation_factor": 0.8599312140985594,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.10806753314178652,
+          "error_vs_discrete": 0.0110561678999207,
+          "propagated_bar": 0.08608385032225965,
+          "median_inside": true,
+          "success_probability": 0.9474325484359885
+        },
+        {
+          "t": 64,
+          "cvar": 0.09385252481536586,
+          "error_vs_discrete": -0.0031588404264999564,
+          "propagated_bar": 0.015304765635764188,
+          "median_inside": true,
+          "success_probability": 0.9382669001188993
+        },
+        {
+          "t": 256,
+          "cvar": 0.09703949659932348,
+          "error_vs_discrete": 2.8131357457661377e-05,
+          "propagated_bar": 0.003437679099891001,
+          "median_inside": true,
+          "success_probability": 0.9998360088142558
+        },
+        {
+          "t": 1024,
+          "cvar": 0.09703949659932347,
+          "error_vs_discrete": 2.81313574576475e-05,
+          "propagated_bar": 0.0008351377556571225,
+          "median_inside": true,
+          "success_probability": 0.9974364911460154
+        }
+      ],
+      "portfolio_months": 385
+    },
+    {
+      "slice": "size_q3_high",
+      "months": 221,
+      "mean_return": 0.01790375644519782,
+      "sample_var": 0.1176343493150685,
+      "sample_cvar": 0.16854495522855376,
+      "histogram_cvar": 0.16162699455871077,
+      "discrete_cvar": 0.1697206905202534,
+      "propagation_factor": 2.9754253032944153,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.23087973184732713,
+          "error_vs_discrete": 0.06115904132707373,
+          "propagated_bar": 0.26794820370723293,
+          "median_inside": true,
+          "success_probability": 0.888458206560915
+        },
+        {
+          "t": 64,
+          "cvar": 0.18169475662194257,
+          "error_vs_discrete": 0.011974066101689163,
+          "propagated_bar": 0.04547855190202269,
+          "median_inside": true,
+          "success_probability": 0.9065287109537198
+        },
+        {
+          "t": 256,
+          "cvar": 0.17152515452362863,
+          "error_vs_discrete": 0.0018044640033752224,
+          "propagated_bar": 0.010025356786456576,
+          "median_inside": true,
+          "success_probability": 0.9374499942296328
+        },
+        {
+          "t": 1024,
+          "cvar": 0.16911747621873127,
+          "error_vs_discrete": -0.0006032143015221314,
+          "propagated_bar": 0.0024223216222985754,
+          "median_inside": true,
+          "success_probability": 0.8990926641596906
+        }
+      ],
+      "portfolio_months": 221
+    },
+    {
+      "slice": "size_q3_low",
+      "months": 385,
+      "mean_return": 0.008776097361456459,
+      "sample_var": 0.0638278031763422,
+      "sample_cvar": 0.09073228690327476,
+      "histogram_cvar": 0.08554991196739252,
+      "discrete_cvar": 0.09090991283791142,
+      "propagation_factor": 1.128732849164312,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.10678763925046969,
+          "error_vs_discrete": 0.015877726412558274,
+          "propagated_bar": 0.11134639793906427,
+          "median_inside": true,
+          "success_probability": 0.9383807317473201
+        },
+        {
+          "t": 64,
+          "cvar": 0.08812923194286351,
+          "error_vs_discrete": -0.0027806808950479045,
+          "propagated_bar": 0.019677312354077915,
+          "median_inside": true,
+          "success_probability": 0.9686463406845657
+        },
+        {
+          "t": 256,
+          "cvar": 0.09231240343720637,
+          "error_vs_discrete": 0.0014024905992949532,
+          "propagated_bar": 0.004409372642851469,
+          "median_inside": true,
+          "success_probability": 0.8584086477772964
+        },
+        {
+          "t": 1024,
+          "cvar": 0.09123624675197031,
+          "error_vs_discrete": 0.0003263339140588961,
+          "propagated_bar": 0.0010704709453586167,
+          "median_inside": true,
+          "success_probability": 0.868413033038432
+        }
+      ],
+      "portfolio_months": 385
+    },
+    {
+      "slice": "size_q4_high",
+      "months": 221,
+      "mean_return": 0.017328043672617952,
+      "sample_var": 0.10525747988505749,
+      "sample_cvar": 0.15086439678397115,
+      "histogram_cvar": 0.14449213745777736,
+      "discrete_cvar": 0.15496654830298312,
+      "propagation_factor": 2.721109134713099,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.20882352959614203,
+          "error_vs_discrete": 0.05385698129315891,
+          "propagated_bar": 0.24800978863441794,
+          "median_inside": true,
+          "success_probability": 0.89395233495453
+        },
+        {
+          "t": 64,
+          "cvar": 0.16384250277344034,
+          "error_vs_discrete": 0.00887595447045722,
+          "propagated_bar": 0.04233232702300229,
+          "median_inside": true,
+          "success_probability": 0.9112407531983036
+        },
+        {
+          "t": 256,
+          "cvar": 0.154542119014695,
+          "error_vs_discrete": -0.00042442928828811954,
+          "propagated_bar": 0.009353699247275436,
+          "median_inside": true,
+          "success_probability": 0.9971167814420405
+        },
+        {
+          "t": 1024,
+          "cvar": 0.154542119014695,
+          "error_vs_discrete": -0.00042442928828811954,
+          "propagated_bar": 0.002261588405039163,
+          "median_inside": true,
+          "success_probability": 0.935412205203979
+        }
+      ],
+      "portfolio_months": 221
+    },
+    {
+      "slice": "size_q4_low",
+      "months": 385,
+      "mean_return": 0.008659240869641918,
+      "sample_var": 0.05626186569479206,
+      "sample_cvar": 0.0825271015839528,
+      "histogram_cvar": 0.07122575033720878,
+      "discrete_cvar": 0.08384745430127707,
+      "propagation_factor": 1.3065429601683292,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.10598919615584229,
+          "error_vs_discrete": 0.022141741854565217,
+          "propagated_bar": 0.12413271901135278,
+          "median_inside": true,
+          "success_probability": 0.9158578000815256
+        },
+        {
+          "t": 64,
+          "cvar": 0.0843915163029392,
+          "error_vs_discrete": 0.0005440620016621267,
+          "propagated_bar": 0.021588554154774477,
+          "median_inside": true,
+          "success_probability": 0.9981409880288206
+        },
+        {
+          "t": 256,
+          "cvar": 0.08439151630293919,
+          "error_vs_discrete": 0.0005440620016621128,
+          "propagated_bar": 0.004806849438814638,
+          "median_inside": true,
+          "success_probability": 0.972404994880576
+        },
+        {
+          "t": 1024,
+          "cvar": 0.08439151630293919,
+          "error_vs_discrete": 0.0005440620016621128,
+          "propagated_bar": 0.0011648192909612229,
+          "median_inside": true,
+          "success_probability": 0.8121631469253996
+        }
+      ],
+      "portfolio_months": 385
+    },
+    {
+      "slice": "size_q5_high",
+      "months": 221,
+      "mean_return": 0.01410913170445277,
+      "sample_var": 0.09832645454545455,
+      "sample_cvar": 0.13303409909743102,
+      "histogram_cvar": 0.11689738415958088,
+      "discrete_cvar": 0.13671421628492555,
+      "propagation_factor": 2.1911646994031093,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.1817226951771198,
+          "error_vs_discrete": 0.045008478892194254,
+          "propagated_bar": 0.19736636846731395,
+          "median_inside": true,
+          "success_probability": 0.8885556999728343
+        },
+        {
+          "t": 64,
+          "cvar": 0.14550186270132123,
+          "error_vs_discrete": 0.008787646416395678,
+          "propagated_bar": 0.033502288825270454,
+          "median_inside": true,
+          "success_probability": 0.9069220442250872
+        },
+        {
+          "t": 256,
+          "cvar": 0.13801275749672104,
+          "error_vs_discrete": 0.0012985412117954842,
+          "propagated_bar": 0.007385615750595236,
+          "median_inside": true,
+          "success_probability": 0.9398432617713379
+        },
+        {
+          "t": 1024,
+          "cvar": 0.1362396934230343,
+          "error_vs_discrete": -0.0004745228618912578,
+          "propagated_bar": 0.0017845316591661605,
+          "median_inside": true,
+          "success_probability": 0.8891196895703345
+        }
+      ],
+      "portfolio_months": 221
+    },
+    {
+      "slice": "size_q5_low",
+      "months": 385,
+      "mean_return": 0.008713358109545957,
+      "sample_var": 0.052222378195038305,
+      "sample_cvar": 0.0715487888811621,
+      "histogram_cvar": 0.068830139079393,
+      "discrete_cvar": 0.07208024364877647,
+      "propagation_factor": 1.3506537493524373,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.10362857560308372,
+          "error_vs_discrete": 0.03154833195430726,
+          "propagated_bar": 0.11591033112373675,
+          "median_inside": true,
+          "success_probability": 0.8709936648997371
+        },
+        {
+          "t": 64,
+          "cvar": 0.06519859472810463,
+          "error_vs_discrete": -0.0068816489206718345,
+          "propagated_bar": 0.01921409289644445,
+          "median_inside": true,
+          "success_probability": 0.8749904629562388
+        },
+        {
+          "t": 256,
+          "cvar": 0.07246107831312981,
+          "error_vs_discrete": 0.0003808346643533467,
+          "propagated_bar": 0.004193305106330503,
+          "median_inside": true,
+          "success_probability": 0.9814024373877278
+        },
+        {
+          "t": 1024,
+          "cvar": 0.07246107831312981,
+          "error_vs_discrete": 0.0003808346643533467,
+          "propagated_bar": 0.0010101876442213376,
+          "median_inside": true,
+          "success_probability": 0.834470245755552
+        }
+      ],
+      "portfolio_months": 385
+    },
+    {
+      "slice": "book-to-market_q1_high",
+      "months": 221,
+      "mean_return": 0.017363498708467408,
+      "sample_var": 0.1336210051413882,
+      "sample_cvar": 0.1936774298140762,
+      "histogram_cvar": 0.18132935233892394,
+      "discrete_cvar": 0.19838346740048637,
+      "propagation_factor": 3.411153196487205,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.26345029313750046,
+          "error_vs_discrete": 0.06506682573701408,
+          "propagated_bar": 0.3143248573950283,
+          "median_inside": true,
+          "success_probability": 0.89931237300904
+        },
+        {
+          "t": 64,
+          "cvar": 0.207062560844759,
+          "error_vs_discrete": 0.008679093444272618,
+          "propagated_bar": 0.053922962932126096,
+          "median_inside": true,
+          "success_probability": 0.9411627557056726
+        },
+        {
+          "t": 256,
+          "cvar": 0.19540369961700202,
+          "error_vs_discrete": -0.002979767783484355,
+          "propagated_bar": 0.01193960001949209,
+          "median_inside": true,
+          "success_probability": 0.8928130216572406
+        },
+        {
+          "t": 1024,
+          "cvar": 0.19822585159444084,
+          "error_vs_discrete": -0.0001576158060455357,
+          "propagated_bar": 0.0028885787102768076,
+          "median_inside": true,
+          "success_probability": 0.9933932723607264
+        }
+      ],
+      "portfolio_months": 221
+    },
+    {
+      "slice": "book-to-market_q1_low",
+      "months": 385,
+      "mean_return": 0.004523576614698582,
+      "sample_var": 0.07778308707968663,
+      "sample_cvar": 0.10561195210608013,
+      "histogram_cvar": 0.09237439864768061,
+      "discrete_cvar": 0.10595212899545281,
+      "propagation_factor": 1.4475487840684198,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.1328771321576899,
+          "error_vs_discrete": 0.026925003162237088,
+          "propagated_bar": 0.1343302542114879,
+          "median_inside": true,
+          "success_probability": 0.902933785837391
+        },
+        {
+          "t": 64,
+          "cvar": 0.10894856940630436,
+          "error_vs_discrete": 0.0029964404108515502,
+          "propagated_bar": 0.023118647158804666,
+          "median_inside": true,
+          "success_probability": 0.9591561073564384
+        },
+        {
+          "t": 256,
+          "cvar": 0.1040010430356794,
+          "error_vs_discrete": -0.0019510859597734048,
+          "propagated_bar": 0.005125667015071961,
+          "median_inside": true,
+          "success_probability": 0.8262751451859576
+        },
+        {
+          "t": 1024,
+          "cvar": 0.10642246383279495,
+          "error_vs_discrete": 0.0004703348373421429,
+          "propagated_bar": 0.0012405420803536646,
+          "median_inside": true,
+          "success_probability": 0.8337888490667404
+        }
+      ],
+      "portfolio_months": 385
+    },
+    {
+      "slice": "book-to-market_q2_high",
+      "months": 221,
+      "mean_return": 0.019063342201496566,
+      "sample_var": 0.10882245862552595,
+      "sample_cvar": 0.16785231948871202,
+      "histogram_cvar": 0.1639652314235391,
+      "discrete_cvar": 0.17438959371761154,
+      "propagation_factor": 3.5741121452620126,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.244854002302742,
+          "error_vs_discrete": 0.07046440858513048,
+          "propagated_bar": 0.3261436402899562,
+          "median_inside": true,
+          "success_probability": 0.8945200928117665
+        },
+        {
+          "t": 64,
+          "cvar": 0.18577249314073443,
+          "error_vs_discrete": 0.0113828994231229,
+          "propagated_bar": 0.05569967499519543,
+          "median_inside": true,
+          "success_probability": 0.9145306888291543
+        },
+        {
+          "t": 256,
+          "cvar": 0.17355666022037125,
+          "error_vs_discrete": -0.0008329334972402846,
+          "propagated_bar": 0.012310154056468008,
+          "median_inside": true,
+          "success_probability": 0.9936285821273597
+        },
+        {
+          "t": 1024,
+          "cvar": 0.17355666022037125,
+          "error_vs_discrete": -0.0008329334972402846,
+          "propagated_bar": 0.0029766157208463233,
+          "median_inside": true,
+          "success_probability": 0.8811062666549081
+        }
+      ],
+      "portfolio_months": 221
+    },
+    {
+      "slice": "book-to-market_q2_low",
+      "months": 385,
+      "mean_return": 0.008613946409934958,
+      "sample_var": 0.06809652514031195,
+      "sample_cvar": 0.0931910119123981,
+      "histogram_cvar": 0.08710826080162225,
+      "discrete_cvar": 0.09420958202346057,
+      "propagation_factor": 1.2912156372268524,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.11724049410753432,
+          "error_vs_discrete": 0.02303091208407375,
+          "propagated_bar": 0.12115632276190874,
+          "median_inside": true,
+          "success_probability": 0.9088609343780178
+        },
+        {
+          "t": 64,
+          "cvar": 0.09589618105846708,
+          "error_vs_discrete": 0.0016865990350065085,
+          "propagated_bar": 0.020955251928810037,
+          "median_inside": true,
+          "success_probability": 0.9826779535785222
+        },
+        {
+          "t": 256,
+          "cvar": 0.09589618105846708,
+          "error_vs_discrete": 0.0016865990350065085,
+          "propagated_bar": 0.004655448684598313,
+          "median_inside": true,
+          "success_probability": 0.837807040142605
+        },
+        {
+          "t": 1024,
+          "cvar": 0.09475788462910291,
+          "error_vs_discrete": 0.0005483026056423423,
+          "propagated_bar": 0.001127401902549316,
+          "median_inside": true,
+          "success_probability": 0.8107977235968834
+        }
+      ],
+      "portfolio_months": 385
+    },
+    {
+      "slice": "book-to-market_q3_high",
+      "months": 221,
+      "mean_return": 0.019679327235095235,
+      "sample_var": 0.10916103125,
+      "sample_cvar": 0.16042394702692603,
+      "histogram_cvar": 0.16051870169966564,
+      "discrete_cvar": 0.16549590572187386,
+      "propagation_factor": 3.064103752472314,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.22578153628605652,
+          "error_vs_discrete": 0.06028563056418265,
+          "propagated_bar": 0.2797789937272692,
+          "median_inside": true,
+          "success_probability": 0.8948186788555791
+        },
+        {
+          "t": 64,
+          "cvar": 0.1751306706815684,
+          "error_vs_discrete": 0.009634764959694536,
+          "propagated_bar": 0.04779521824568803,
+          "median_inside": true,
+          "success_probability": 0.9162530601150793
+        },
+        {
+          "t": 256,
+          "cvar": 0.16465797761275153,
+          "error_vs_discrete": -0.0008379281091223378,
+          "propagated_bar": 0.01056445892478893,
+          "median_inside": true,
+          "success_probability": 0.9912844764710929
+        },
+        {
+          "t": 1024,
+          "cvar": 0.16465797761275153,
+          "error_vs_discrete": -0.0008379281091223378,
+          "propagated_bar": 0.0025545931289076645,
+          "median_inside": true,
+          "success_probability": 0.8550938861408659
+        }
+      ],
+      "portfolio_months": 221
+    },
+    {
+      "slice": "book-to-market_q3_low",
+      "months": 385,
+      "mean_return": 0.009930193245619987,
+      "sample_var": 0.061521522381624415,
+      "sample_cvar": 0.08620473664289945,
+      "histogram_cvar": 0.0808498511911889,
+      "discrete_cvar": 0.08652102741450354,
+      "propagation_factor": 1.1932948422960576,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.10693860300534754,
+          "error_vs_discrete": 0.020417575590843992,
+          "propagated_bar": 0.11311753323765811,
+          "median_inside": true,
+          "success_probability": 0.9145682751532864
+        },
+        {
+          "t": 64,
+          "cvar": 0.08721296002250194,
+          "error_vs_discrete": 0.000691932607998394,
+          "propagated_bar": 0.019653395984715504,
+          "median_inside": true,
+          "success_probability": 0.9964261339398888
+        },
+        {
+          "t": 256,
+          "cvar": 0.08721296002250192,
+          "error_vs_discrete": 0.0006919326079983801,
+          "propagated_bar": 0.0043742247883851865,
+          "median_inside": true,
+          "success_probability": 0.9499551799959922
+        },
+        {
+          "t": 1024,
+          "cvar": 0.08616098758737754,
+          "error_vs_discrete": -0.00036003982712599913,
+          "propagated_bar": 0.0010598609341091912,
+          "median_inside": true,
+          "success_probability": 0.8495476430456516
+        }
+      ],
+      "portfolio_months": 385
+    },
+    {
+      "slice": "book-to-market_q4_high",
+      "months": 221,
+      "mean_return": 0.01971142186477688,
+      "sample_var": 0.09768052638888888,
+      "sample_cvar": 0.15408184761593535,
+      "histogram_cvar": 0.14109483697887304,
+      "discrete_cvar": 0.15958282003220403,
+      "propagation_factor": 2.9713770775120363,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.21077183250162024,
+          "error_vs_discrete": 0.051189012469416206,
+          "propagated_bar": 0.2812117699158083,
+          "median_inside": true,
+          "success_probability": 0.9136450754776753
+        },
+        {
+          "t": 64,
+          "cvar": 0.16165377607422826,
+          "error_vs_discrete": 0.00207095604202423,
+          "propagated_bar": 0.048823706921206356,
+          "median_inside": true,
+          "success_probability": 0.9948702595399033
+        },
+        {
+          "t": 256,
+          "cvar": 0.1616537760742282,
+          "error_vs_discrete": 0.0020709560420241746,
+          "propagated_bar": 0.010863474507942481,
+          "median_inside": true,
+          "success_probability": 0.9315579251463973
+        },
+        {
+          "t": 1024,
+          "cvar": 0.15903430042654285,
+          "error_vs_discrete": -0.0005485196056611852,
+          "propagated_bar": 0.002631965363088176,
+          "median_inside": true,
+          "success_probability": 0.9234345527344354
+        }
+      ],
+      "portfolio_months": 221
+    },
+    {
+      "slice": "book-to-market_q4_low",
+      "months": 385,
+      "mean_return": 0.01132692069626244,
+      "sample_var": 0.05535211827130468,
+      "sample_cvar": 0.07621231256330421,
+      "histogram_cvar": 0.07343833217040835,
+      "discrete_cvar": 0.07696162059231167,
+      "propagation_factor": 1.1643569613434683,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.09966781638190589,
+          "error_vs_discrete": 0.022706195789594222,
+          "propagated_bar": 0.10659988291900258,
+          "median_inside": true,
+          "success_probability": 0.8961083361461247
+        },
+        {
+          "t": 64,
+          "cvar": 0.08042052819296228,
+          "error_vs_discrete": 0.0034589076006506098,
+          "propagated_bar": 0.018233167074881606,
+          "median_inside": true,
+          "success_probability": 0.9236161386151464
+        },
+        {
+          "t": 256,
+          "cvar": 0.0764409132504684,
+          "error_vs_discrete": -0.0005207073418432712,
+          "propagated_bar": 0.004032241540291087,
+          "median_inside": true,
+          "success_probability": 0.9640777431271139
+        },
+        {
+          "t": 1024,
+          "cvar": 0.07740422158393287,
+          "error_vs_discrete": 0.00044260099162120314,
+          "propagated_bar": 0.0009751822457959396,
+          "median_inside": true,
+          "success_probability": 0.8138103994529752
+        }
+      ],
+      "portfolio_months": 385
+    },
+    {
+      "slice": "book-to-market_q5_high",
+      "months": 221,
+      "mean_return": 0.02296115463829422,
+      "sample_var": 0.1073135062713797,
+      "sample_cvar": 0.17109081385180838,
+      "histogram_cvar": 0.14525323054830527,
+      "discrete_cvar": 0.17578540604908943,
+      "propagation_factor": 3.4156794355789115,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.23731506398530516,
+          "error_vs_discrete": 0.06152965793621573,
+          "propagated_bar": 0.31968497825352465,
+          "median_inside": true,
+          "success_probability": 0.9074768129375522
+        },
+        {
+          "t": 64,
+          "cvar": 0.18085251114259282,
+          "error_vs_discrete": 0.005067105093503388,
+          "propagated_bar": 0.055230274258132116,
+          "median_inside": true,
+          "success_probability": 0.977950679607043
+        },
+        {
+          "t": 256,
+          "cvar": 0.18085251114259282,
+          "error_vs_discrete": 0.005067105093503388,
+          "propagated_bar": 0.012264382920454961,
+          "median_inside": true,
+          "success_probability": 0.8208367376867798
+        },
+        {
+          "t": 1024,
+          "cvar": 0.17489183682577542,
+          "error_vs_discrete": -0.0008935692233140169,
+          "propagated_bar": 0.0029696466273588613,
+          "median_inside": true,
+          "success_probability": 0.8693981141867103
+        }
+      ],
+      "portfolio_months": 221
+    },
+    {
+      "slice": "book-to-market_q5_low",
+      "months": 385,
+      "mean_return": 0.014732743723718128,
+      "sample_var": 0.05151013369157244,
+      "sample_cvar": 0.08185800852735164,
+      "histogram_cvar": 0.07685306925391706,
+      "discrete_cvar": 0.0831065208861839,
+      "propagation_factor": 1.6694054572228882,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.1150480956075801,
+          "error_vs_discrete": 0.03194157472139621,
+          "propagated_bar": 0.15369347966399616,
+          "median_inside": true,
+          "success_probability": 0.8988675744692853
+        },
+        {
+          "t": 64,
+          "cvar": 0.08745215294899039,
+          "error_vs_discrete": 0.004345632062806498,
+          "propagated_bar": 0.02635571504699786,
+          "median_inside": true,
+          "success_probability": 0.9388049153933382
+        },
+        {
+          "t": 256,
+          "cvar": 0.08174635041316025,
+          "error_vs_discrete": -0.001360170473023642,
+          "propagated_bar": 0.005834700332436891,
+          "median_inside": true,
+          "success_probability": 0.9030361192520238
+        },
+        {
+          "t": 1024,
+          "cvar": 0.08312750090417322,
+          "error_vs_discrete": 2.098001798932214e-05,
+          "propagated_bar": 0.0014115358062771867,
+          "median_inside": true,
+          "success_probability": 0.9994898968015581
+        }
+      ],
+      "portfolio_months": 385
+    }
+  ],
+  "firms": {
+    "min_months": 60,
+    "by_regime": {
+      "high": {
+        "firms": 6426,
+        "median_sample_cvar": 0.27444060000000003,
+        "p10_sample_cvar": 0.160481625,
+        "p90_sample_cvar": 0.427991,
+        "median_histogram_minus_sample": -0.02119094947916672
+      },
+      "low": {
+        "firms": 11073,
+        "median_sample_cvar": 0.23734375,
+        "p10_sample_cvar": 0.1280962611111111,
+        "p90_sample_cvar": 0.3911365777777779,
+        "median_histogram_minus_sample": -0.019636684659090964
+      }
+    },
+    "by_size_quintile": [
+      {
+        "firms": 3833,
+        "median_sample_cvar": 0.3019,
+        "p10_sample_cvar": 0.17941598857142857,
+        "p90_sample_cvar": 0.4488251142857143,
+        "median_histogram_minus_sample": -0.02436669776785713,
+        "regime": "high",
+        "size_q": 1
+      },
+      {
+        "firms": 890,
+        "median_sample_cvar": 0.2512070535714286,
+        "p10_sample_cvar": 0.15629494285714288,
+        "p90_sample_cvar": 0.3923067942857143,
+        "median_histogram_minus_sample": -0.01871963281250001,
+        "regime": "high",
+        "size_q": 2
+      },
+      {
+        "firms": 589,
+        "median_sample_cvar": 0.233626,
+        "p10_sample_cvar": 0.14550496000000002,
+        "p90_sample_cvar": 0.39699332500000006,
+        "median_histogram_minus_sample": -0.018007734374999987,
+        "regime": "high",
+        "size_q": 3
+      },
+      {
+        "firms": 602,
+        "median_sample_cvar": 0.22102815833333334,
+        "p10_sample_cvar": 0.14292815500000003,
+        "p90_sample_cvar": 0.3552015,
+        "median_histogram_minus_sample": -0.016828577256944463,
+        "regime": "high",
+        "size_q": 4
+      },
+      {
+        "firms": 512,
+        "median_sample_cvar": 0.20396056666666668,
+        "p10_sample_cvar": 0.13579409444444446,
+        "p90_sample_cvar": 0.3253207214285715,
+        "median_histogram_minus_sample": -0.015254580776515092,
+        "regime": "high",
+        "size_q": 5
+      },
+      {
+        "firms": 7369,
+        "median_sample_cvar": 0.2689585,
+        "p10_sample_cvar": 0.13986558000000002,
+        "p90_sample_cvar": 0.4144163333333333,
+        "median_histogram_minus_sample": -0.023262277777777784,
+        "regime": "low",
+        "size_q": 1
+      },
+      {
+        "firms": 1439,
+        "median_sample_cvar": 0.20950085714285713,
+        "p10_sample_cvar": 0.12618279999999998,
+        "p90_sample_cvar": 0.33682382666666677,
+        "median_histogram_minus_sample": -0.016436908589572113,
+        "regime": "low",
+        "size_q": 2
+      },
+      {
+        "firms": 905,
+        "median_sample_cvar": 0.1931102,
+        "p10_sample_cvar": 0.11932218961038961,
+        "p90_sample_cvar": 0.301004645,
+        "median_histogram_minus_sample": -0.014860595238095076,
+        "regime": "low",
+        "size_q": 3
+      },
+      {
+        "firms": 763,
+        "median_sample_cvar": 0.17482266666666668,
+        "p10_sample_cvar": 0.11781464000000001,
+        "p90_sample_cvar": 0.2682569785714286,
+        "median_histogram_minus_sample": -0.014192455357142808,
+        "regime": "low",
+        "size_q": 4
+      },
+      {
+        "firms": 597,
+        "median_sample_cvar": 0.14926955555555554,
+        "p10_sample_cvar": 0.10895444,
+        "p90_sample_cvar": 0.22955873999999998,
+        "median_histogram_minus_sample": -0.012534251265182206,
+        "regime": "low",
+        "size_q": 5
+      }
+    ]
+  },
+  "firm_amplitude_estimation": {
+    "phase_bits": 8,
+    "firms_estimated": 17468,
+    "fraction_median_inside_bar": 1.0,
+    "median_propagated_bar": 0.010725101731741262
+  }
+}

@@ -23,7 +23,7 @@ learning/*.tex
 .Rhistory
 learning/
 notes/.Rhistory
-data/
+/data/
 logs/
 report/*.csv
 .venv/

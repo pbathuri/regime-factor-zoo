@@ -1,0 +1,142 @@
+{
+  "series": "data/factors/regimes.parquet",
+  "column": "mktrf",
+  "loss": "-mktrf",
+  "alpha": 0.95,
+  "histogram_qubits": 5,
+  "units": "decimal monthly excess return, as stored",
+  "slices": [
+    {
+      "slice": "labeled",
+      "months": 634,
+      "mean_return": 0.006638643533123028,
+      "sample_var": 0.07604500000000002,
+      "sample_cvar": 0.103640625,
+      "histogram_cvar": 0.10049062500000001,
+      "discrete_cvar": 0.10303543769716086,
+      "propagation_factor": 2.9942874999999964,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.1900082821478051,
+          "error_vs_discrete": 0.08697284445064424,
+          "propagated_bar": 0.22657278659989616,
+          "median_inside": true,
+          "success_probability": 0.8608000166429584
+        },
+        {
+          "t": 64,
+          "cvar": 0.10481219735230617,
+          "error_vs_discrete": 0.0017767596551453019,
+          "propagated_bar": 0.03499834819675615,
+          "median_inside": true,
+          "success_probability": 0.9932513387011767
+        },
+        {
+          "t": 256,
+          "cvar": 0.10481219735230604,
+          "error_vs_discrete": 0.001776759655145177,
+          "propagated_bar": 0.007396784020862921,
+          "median_inside": true,
+          "success_probability": 0.9000536023420515
+        },
+        {
+          "t": 1024,
+          "cvar": 0.1030476806368112,
+          "error_vs_discrete": 1.224293965033929e-05,
+          "propagated_bar": 0.0017646458159453478,
+          "median_inside": true,
+          "success_probability": 0.9998869346125655
+        }
+      ]
+    },
+    {
+      "slice": "high",
+      "months": 223,
+      "mean_return": 0.008486547085201794,
+      "sample_var": 0.09965999999999986,
+      "sample_cvar": 0.13144166666666665,
+      "histogram_cvar": 0.13160312500000004,
+      "discrete_cvar": 0.13403825112107623,
+      "propagation_factor": 2.5219875000000003,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.19564743375034543,
+          "error_vs_discrete": 0.061609182629269205,
+          "propagated_bar": 0.21207045625508705,
+          "median_inside": true,
+          "success_probability": 0.865930502631405
+        },
+        {
+          "t": 64,
+          "cvar": 0.1238896413195289,
+          "error_vs_discrete": -0.010148609801547331,
+          "propagated_bar": 0.03478688730877248,
+          "median_inside": true,
+          "success_probability": 0.9105787916138495
+        },
+        {
+          "t": 256,
+          "cvar": 0.13745040241701234,
+          "error_vs_discrete": 0.003412151295936111,
+          "propagated_bar": 0.007557301405005666,
+          "median_inside": true,
+          "success_probability": 0.8133349088203216
+        },
+        {
+          "t": 1024,
+          "cvar": 0.1337825511434898,
+          "error_vs_discrete": -0.0002556999775864266,
+          "propagated_bar": 0.0018181115748647004,
+          "median_inside": true,
+          "success_probability": 0.9606522272049711
+        }
+      ]
+    },
+    {
+      "slice": "low",
+      "months": 411,
+      "mean_return": 0.005636009732360098,
+      "sample_var": 0.0591,
+      "sample_cvar": 0.0756904761904762,
+      "histogram_cvar": 0.07402248641304349,
+      "discrete_cvar": 0.07629601581508516,
+      "propagation_factor": 1.3001562499999988,
+      "amplitude_estimation": [
+        {
+          "t": 16,
+          "cvar": 0.10858425077918611,
+          "error_vs_discrete": 0.03228823496410095,
+          "propagated_bar": 0.10845355415442656,
+          "median_inside": true,
+          "success_probability": 0.8643157655742659
+        },
+        {
+          "t": 64,
+          "cvar": 0.07159106888786874,
+          "error_vs_discrete": -0.004704946927216416,
+          "propagated_bar": 0.017714930642778643,
+          "median_inside": true,
+          "success_probability": 0.921003210245358
+        },
+        {
+          "t": 256,
+          "cvar": 0.07489551374604722,
+          "error_vs_discrete": -0.00140050206903794,
+          "propagated_bar": 0.003841329042205411,
+          "median_inside": true,
+          "success_probability": 0.8305079234378179
+        },
+        {
+          "t": 1024,
+          "cvar": 0.07669114513261982,
+          "error_vs_discrete": 0.0003951293175346593,
+          "propagated_bar": 0.0009236195343957746,
+          "median_inside": true,
+          "success_probability": 0.8186893866382361
+        }
+      ]
+    }
+  ]
+}

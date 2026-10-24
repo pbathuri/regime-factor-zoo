@@ -35,6 +35,16 @@ a correlation below one. The matched-size permutation null
 (R/05_permutation_null.R) has not been run; until it is, the number above means
 nothing on its own.
 
+## Quantum Extension
+
+`Quantum Extension/` is a local addition. It keeps the amplitude-estimation
+audit, the Kingston snapshot, and the scaling figures, and
+`market_check.py` applies that CVaR decomposition to
+`data/factors/regimes.parquet`. `panel_cvar.py` applies it to the local
+CRSP monthly panel, sorted into NYSE size and book-to-market quintiles
+with Compustat book equity. It does not change the factor selection.
+The factor files under `/data` stay gitignored.
+
 ## Earlier phases
 
 FF3 rebuilt from CRSP and validated against Ken French (SMB 0.976, HML 0.965);

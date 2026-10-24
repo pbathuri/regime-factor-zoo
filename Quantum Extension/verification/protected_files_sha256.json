@@ -1,0 +1,11 @@
+{
+  "data/scale_sweep.json": "85ff5fe220e35469df549a7e27ebb7c766c1089006dfe6d7ef065482ac9efb2f",
+  "data/kingston_snapshot.json": "c0364bedafda21e64bfbfb9a75e1f5d5464e1280412e36793a2d4e8671d68fff",
+  "data/market_regimes.json": "b8b6a06820c933dfdeea4a4cec6a09fa243c2341969567b330b6d471298f76ad",
+  "data/panel_cvar.json": "2fd228a440543b3875423ac9dd385ab439199dfada511398a16339b8caa57cc1",
+  "bigred_out/panel_cvar.json": "f957a989dad379f70a74459d04242fcb06704ae67110e4fdb7104caead208b99",
+  "bigred_out/panel_cvar_8688102.out": "45a63381d2d1ef5a83e42d888b8f19076e08e787e0fb90e0362943c80f25c81a",
+  "bigred_out/panel_cvar_8688102.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "test_qiskit_audit.py": "fa5e1cd0b5f95352f345f854e7bda0b88029f7d0ed6459902b309fa1df9fb2c2",
+  "test_audit.py": "29adbe2bd0ea1e43c9c5f7bb23e9fbb859fbb3b8f74e416972bf266886fdb73a"
+}

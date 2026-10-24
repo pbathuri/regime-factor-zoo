@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-23",
+  "numeric_table_rows_checked": 25,
+  "all_table_rows_match": true,
+  "sweep_byte_identical": true,
+  "protected_files_unchanged": 9,
+  "plot_scripts_compile": true,
+  "independent_prose_review": "approved; survival factor rounding corrected to 0.9055",
+  "pdf_pages": 6
+}

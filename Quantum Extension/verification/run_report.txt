@@ -1,0 +1,52 @@
+European call. S0=100, K=105, r=0.05, sigma=0.2, T=1.
+Black–Scholes price 8.0213522351
+
+estimator  value  error_vs_BS  error_vs_discrete  discrete_bar  median_inside
+black_scholes  8.0213522351  0.000000e+00      
+gauss_hermite_16  8.1919279328  1.705757e-01      
+gauss_hermite_96  8.0200513685  -1.300867e-03      
+window_integral_unnormalized  8.0172807325  -4.071503e-03      
+window_renormalized_pm4sigma  8.0177885991  -3.563636e-03      
+uniform_grid_16_exact  8.0085199051  -1.283233e-02  0.000000e+00    
+uniform_grid_16_shots_4096  7.8537434711  -1.676088e-01  -1.547764e-01    
+uniform_grid_256_exact  8.0178887418  -3.463493e-03      
+monte_carlo_4096  7.7862555774  -2.350967e-01      
+
+Uniform-grid encoding: payoff_max=124.331874, marked probability a=0.06771494, price scale=118.268137.
+Shot estimator, 4096 shots, seed 42: binomial standard error on the price 4.643061e-01.
+Monte Carlo standard error at 4096 paths, seed 7: 2.041719e-01.
+Amplitude estimation estimates the uniform-grid expectation, not the Black–Scholes value.
+ae_median_t16  4.5013129379  -3.520039e+00  -3.507207e+00  1.622889e+01  True
+    t=16  a=0.06771494  median_a=0.03806023  |median-a|=2.965e-02  bar=1.372e-01  P(inside)=0.921119  floor=0.810569  one_shot_a=0.14644661  one_shot_price=17.319968  shot_inside=True
+ae_median_t64  6.9824760411  -1.038876e+00  -1.026044e+00  3.202297e+00  True
+    t=64  a=0.06771494  median_a=0.05903937  |median-a|=8.676e-03  bar=2.708e-02  P(inside)=0.843049  floor=0.810569  one_shot_a=0.08426519  one_shot_price=9.965887  shot_inside=True
+ae_median_t256  7.6822847653  -3.390675e-01  -3.262351e-01  7.471413e-01  True
+    t=256  a=0.06771494  median_a=0.06495650  |median-a|=2.758e-03  bar=6.317e-03  P(inside)=0.814712  floor=0.810569  one_shot_a=0.07113569  one_shot_price=8.413086  shot_inside=True
+ae_median_t1024  8.0438384424  2.248621e-02  3.531854e-02  1.834458e-01  True
+    t=1024  a=0.06771494  median_a=0.06801357  |median-a|=2.986e-04  bar=1.551e-03  P(inside)=0.933545  floor=0.810569  one_shot_a=0.06801357  one_shot_price=8.043838  shot_inside=True
+Gauss–Hermite 16 mass check 1.000000000000.
+
+Normal loss N(0,1), alpha=0.95. Sample of 20000, seed 11, 5-qubit histogram.
+Closed form VaR 1.6448536270  CVaR 2.0627128075
+Sample VaR 1.6357809226  sample CVaR 2.0606125246
+Legacy returned CVaR (histogram conditional mean) 1.9303992869
+    error vs closed form -1.323135e-01
+    this number does not depend on an amplitude-estimation outcome.
+Histogram tail probability from index 22: 0.068350
+Exact discrete excess E[(center - sample VaR)+] = 0.02122713
+Assembled discrete CVaR = sample VaR + excess / (1-alpha) = 2.0603234871
+Excess maximum on the histogram 2.079776. Propagation factor max/(1-alpha) = 41.595514.
+
+Tail-probability amplitude (the quantity the existing comparator circuit estimates):
+    t=64  a=0.06835000  median=0.05903937  |err|=9.311e-03  bar=2.718e-02  P(inside)=0.833078  median_inside=True
+
+Corrected estimator: amplitude estimation of the excess, then sample VaR + â * max / (1-alpha).
+    t=16  a=0.01020645  median_a=0.03806023  |a err|=2.785e-02  a bar=7.802e-02  P(inside)=0.858922  median_inside=True
+        CVaR=3.2189159024  error_vs_closed=1.156203e+00  error_vs_discrete=1.158592e+00  propagated_bar=3.245422e+00  one_shot_inside=False
+    t=64  a=0.01020645  median_a=0.00960736  |a err|=5.991e-04  a bar=1.228e-02  P(inside)=0.996833  median_inside=True
+        CVaR=2.0354039901  error_vs_closed=-2.730882e-02  error_vs_discrete=-2.491950e-02  propagated_bar=5.106734e-01  one_shot_inside=True
+    t=256  a=0.01020645  median_a=0.00960736  |a err|=5.991e-04  a bar=2.617e-03  P(inside)=0.903055  median_inside=True
+        CVaR=2.0354039901  error_vs_closed=-2.730882e-02  error_vs_discrete=-2.491950e-02  propagated_bar=1.088757e-01  one_shot_inside=True
+    t=1024  a=0.01020645  median_a=0.01021512  |a err|=8.666e-06  a bar=6.261e-04  P(inside)=0.999554  median_inside=True
+        CVaR=2.0606839698  error_vs_closed=-2.028838e-03  error_vs_discrete=3.604827e-04  propagated_bar=2.604439e-02  one_shot_inside=True
+The legacy conditional mean stays 1.9303992869 at every t above.

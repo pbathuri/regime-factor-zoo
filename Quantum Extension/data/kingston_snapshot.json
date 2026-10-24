@@ -1,0 +1,1903 @@
+{
+  "backend": "FakeKingston",
+  "simulator": "qiskit_aer AerSimulator.from_backend",
+  "mitigation": "none",
+  "optimization_level": 1,
+  "theta": 0.7,
+  "calibration": {
+    "sx": {
+      "count": 156,
+      "median": 0.00023619655980713472,
+      "min": 6.32973858133951e-05,
+      "max": 1.0
+    },
+    "cz": {
+      "count": 352,
+      "median": 0.0018277333407478724,
+      "min": 0.0008728333168915581,
+      "max": 1.0
+    },
+    "rz": {
+      "count": 156,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "x": {
+      "count": 156,
+      "median": 0.00023619655980713472,
+      "min": 6.32973858133951e-05,
+      "max": 1.0
+    },
+    "readout": {
+      "count": 156,
+      "median": 0.009521484375,
+      "min": 0.0018310546875,
+      "max": 0.5072021484375
+    },
+    "last_update_date": "2026-04-15 09:15:15+02:00",
+    "num_qubits": 156
+  },
+  "circuits": {
+    "amplification_m0": {
+      "depth": 5,
+      "size": 5,
+      "operations": {
+        "rz": 2,
+        "sx": 2,
+        "measure": 1
+      },
+      "physical_qubits": [
+        0
+      ]
+    },
+    "amplification_m1": {
+      "depth": 9,
+      "size": 9,
+      "operations": {
+        "rz": 4,
+        "sx": 4,
+        "barrier": 1,
+        "measure": 1
+      },
+      "physical_qubits": [
+        0
+      ]
+    },
+    "amplification_m2": {
+      "depth": 13,
+      "size": 13,
+      "operations": {
+        "rz": 6,
+        "sx": 6,
+        "barrier": 2,
+        "measure": 1
+      },
+      "physical_qubits": [
+        0
+      ]
+    },
+    "amplification_m4": {
+      "depth": 21,
+      "size": 21,
+      "operations": {
+        "rz": 10,
+        "sx": 10,
+        "barrier": 4,
+        "measure": 1
+      },
+      "physical_qubits": [
+        0
+      ]
+    },
+    "amplification_m8": {
+      "depth": 37,
+      "size": 37,
+      "operations": {
+        "rz": 18,
+        "sx": 18,
+        "barrier": 8,
+        "measure": 1
+      },
+      "physical_qubits": [
+        0
+      ]
+    },
+    "canonical_m2": {
+      "depth": 64,
+      "size": 98,
+      "operations": {
+        "rz": 41,
+        "sx": 32,
+        "cz": 14,
+        "x": 9,
+        "barrier": 3,
+        "measure": 2
+      },
+      "physical_qubits": [
+        110,
+        109,
+        108
+      ]
+    },
+    "canonical_m3": {
+      "depth": 151,
+      "size": 223,
+      "operations": {
+        "rz": 92,
+        "sx": 72,
+        "cz": 35,
+        "x": 21,
+        "barrier": 7,
+        "measure": 3
+      },
+      "physical_qubits": [
+        104,
+        117,
+        105,
+        103
+      ]
+    },
+    "call_loader": {
+      "depth": 195,
+      "size": 272,
+      "operations": {
+        "sx": 127,
+        "rz": 82,
+        "cz": 62,
+        "measure": 1
+      },
+      "physical_qubits": [
+        90,
+        89,
+        91,
+        88,
+        98
+      ]
+    }
+  },
+  "amplification": {
+    "amplitude": 0.41501642854987947,
+    "shots_per_circuit": 8192,
+    "repetitions": [
+      0,
+      1,
+      2,
+      4,
+      8
+    ],
+    "seeds": 20,
+    "ideal_kappa0_median_abs_error": 5.714501205567046e-07,
+    "noisy_kappa0_median_abs_error": 0.0029999714501205976,
+    "noisy_tanaka_median_abs_error": 0.0005004714501205543,
+    "noisy_classical_m0_median_abs_error": 0.005104319174879468,
+    "tanaka_kappa_median": 0.01,
+    "runs": [
+      {
+        "seed": 0,
+        "ideal_kappa0": {
+          "log_likelihood": -18749.46095619281,
+          "amplitude": 0.415017,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19651.623840480308,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19507.756025848717,
+          "amplitude": 0.4155169,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.415283203125,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.415283203125
+          },
+          {
+            "m": 1,
+            "p_hat": 0.73681640625
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1318359375
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0125732421875
+          },
+          {
+            "m": 8,
+            "p_hat": 0.386474609375
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.412841796875
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7406005859375
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1220703125
+          },
+          {
+            "m": 4,
+            "p_hat": 0.000244140625
+          },
+          {
+            "m": 8,
+            "p_hat": 0.382080078125
+          }
+        ]
+      },
+      {
+        "seed": 1,
+        "ideal_kappa0": {
+          "log_likelihood": -18676.385221962802,
+          "amplitude": 0.415017,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19609.30775244641,
+          "amplitude": 0.41851630000000006,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19452.098732488645,
+          "amplitude": 0.4155169,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.4136962890625,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4136962890625
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7474365234375
+          },
+          {
+            "m": 2,
+            "p_hat": 0.13330078125
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0135498046875
+          },
+          {
+            "m": 8,
+            "p_hat": 0.383056640625
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4110107421875
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7510986328125
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1243896484375
+          },
+          {
+            "m": 4,
+            "p_hat": 0.000244140625
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3787841796875
+          }
+        ]
+      },
+      {
+        "seed": 2,
+        "ideal_kappa0": {
+          "log_likelihood": -18665.310050367203,
+          "amplitude": 0.415017,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19509.23439250578,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19385.40969683617,
+          "amplitude": 0.4155169,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.4140625,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4140625
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7388916015625
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1278076171875
+          },
+          {
+            "m": 4,
+            "p_hat": 0.011962890625
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3814697265625
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4110107421875
+          },
+          {
+            "m": 1,
+            "p_hat": 0.744140625
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1197509765625
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0003662109375
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3773193359375
+          }
+        ]
+      },
+      {
+        "seed": 3,
+        "ideal_kappa0": {
+          "log_likelihood": -18705.220732943097,
+          "amplitude": 0.415017,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19574.148863295042,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19440.888906828008,
+          "amplitude": 0.4155169,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.412353515625,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.412353515625
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7332763671875
+          },
+          {
+            "m": 2,
+            "p_hat": 0.12744140625
+          },
+          {
+            "m": 4,
+            "p_hat": 0.012451171875
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3819580078125
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.41064453125
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7408447265625
+          },
+          {
+            "m": 2,
+            "p_hat": 0.11962890625
+          },
+          {
+            "m": 4,
+            "p_hat": 0.00048828125
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3787841796875
+          }
+        ]
+      },
+      {
+        "seed": 4,
+        "ideal_kappa0": {
+          "log_likelihood": -18748.6595048026,
+          "amplitude": 0.415017,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19753.87080239273,
+          "amplitude": 0.41851630000000006,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19575.39649746283,
+          "amplitude": 0.4155169,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.4139404296875,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4139404296875
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7415771484375
+          },
+          {
+            "m": 2,
+            "p_hat": 0.13525390625
+          },
+          {
+            "m": 4,
+            "p_hat": 0.014404296875
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3868408203125
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4102783203125
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7452392578125
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1251220703125
+          },
+          {
+            "m": 4,
+            "p_hat": 0.000244140625
+          },
+          {
+            "m": 8,
+            "p_hat": 0.381591796875
+          }
+        ]
+      },
+      {
+        "seed": 5,
+        "ideal_kappa0": {
+          "log_likelihood": -18706.671432129086,
+          "amplitude": 0.415017,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19572.42869514855,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19426.3180322933,
+          "amplitude": 0.415017,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.4219970703125,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4219970703125
+          },
+          {
+            "m": 1,
+            "p_hat": 0.742919921875
+          },
+          {
+            "m": 2,
+            "p_hat": 0.128662109375
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0123291015625
+          },
+          {
+            "m": 8,
+            "p_hat": 0.38916015625
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.419189453125
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7464599609375
+          },
+          {
+            "m": 2,
+            "p_hat": 0.12060546875
+          },
+          {
+            "m": 4,
+            "p_hat": 0.000244140625
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3857421875
+          }
+        ]
+      },
+      {
+        "seed": 6,
+        "ideal_kappa0": {
+          "log_likelihood": -18749.73524943438,
+          "amplitude": 0.4145171,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19732.590668463956,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19553.63176583004,
+          "amplitude": 0.415017,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.4215087890625,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4215087890625
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7412109375
+          },
+          {
+            "m": 2,
+            "p_hat": 0.13232421875
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0137939453125
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3919677734375
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4183349609375
+          },
+          {
+            "m": 1,
+            "p_hat": 0.744873046875
+          },
+          {
+            "m": 2,
+            "p_hat": 0.122802734375
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0001220703125
+          },
+          {
+            "m": 8,
+            "p_hat": 0.386962890625
+          }
+        ]
+      },
+      {
+        "seed": 7,
+        "ideal_kappa0": {
+          "log_likelihood": -18715.58865805712,
+          "amplitude": 0.415017,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19497.33521719702,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19387.031896393863,
+          "amplitude": 0.4155169,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.413330078125,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.413330078125
+          },
+          {
+            "m": 1,
+            "p_hat": 0.740234375
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1302490234375
+          },
+          {
+            "m": 4,
+            "p_hat": 0.01123046875
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3817138671875
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4124755859375
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7451171875
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1224365234375
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0003662109375
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3802490234375
+          }
+        ]
+      },
+      {
+        "seed": 8,
+        "ideal_kappa0": {
+          "log_likelihood": -18694.088727877697,
+          "amplitude": 0.4155169,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19395.345846396973,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19314.772877764113,
+          "amplitude": 0.4155169,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.409912109375,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.409912109375
+          },
+          {
+            "m": 1,
+            "p_hat": 0.73486328125
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1265869140625
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0101318359375
+          },
+          {
+            "m": 8,
+            "p_hat": 0.377197265625
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4090576171875
+          },
+          {
+            "m": 1,
+            "p_hat": 0.741455078125
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1195068359375
+          },
+          {
+            "m": 4,
+            "p_hat": 0.000732421875
+          },
+          {
+            "m": 8,
+            "p_hat": 0.375244140625
+          }
+        ]
+      },
+      {
+        "seed": 9,
+        "ideal_kappa0": {
+          "log_likelihood": -18656.5506599567,
+          "amplitude": 0.415017,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19342.48975122755,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19267.026745115996,
+          "amplitude": 0.4155169,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.4097900390625,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4097900390625
+          },
+          {
+            "m": 1,
+            "p_hat": 0.741943359375
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1280517578125
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0096435546875
+          },
+          {
+            "m": 8,
+            "p_hat": 0.37890625
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4093017578125
+          },
+          {
+            "m": 1,
+            "p_hat": 0.747314453125
+          },
+          {
+            "m": 2,
+            "p_hat": 0.122314453125
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0001220703125
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3770751953125
+          }
+        ]
+      },
+      {
+        "seed": 10,
+        "ideal_kappa0": {
+          "log_likelihood": -18840.157558314066,
+          "amplitude": 0.415017,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19704.76681490993,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19552.179636722794,
+          "amplitude": 0.415017,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.4212646484375,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4212646484375
+          },
+          {
+            "m": 1,
+            "p_hat": 0.745361328125
+          },
+          {
+            "m": 2,
+            "p_hat": 0.137451171875
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0126953125
+          },
+          {
+            "m": 8,
+            "p_hat": 0.389404296875
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.41943359375
+          },
+          {
+            "m": 1,
+            "p_hat": 0.74951171875
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1292724609375
+          },
+          {
+            "m": 4,
+            "p_hat": 0.00048828125
+          },
+          {
+            "m": 8,
+            "p_hat": 0.38671875
+          }
+        ]
+      },
+      {
+        "seed": 11,
+        "ideal_kappa0": {
+          "log_likelihood": -18779.01271810956,
+          "amplitude": 0.415017,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19730.927885352205,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19561.081925190167,
+          "amplitude": 0.415017,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.4249267578125,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4249267578125
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7430419921875
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1341552734375
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0133056640625
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3922119140625
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.421875
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7489013671875
+          },
+          {
+            "m": 2,
+            "p_hat": 0.12548828125
+          },
+          {
+            "m": 4,
+            "p_hat": 0.000244140625
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3876953125
+          }
+        ]
+      },
+      {
+        "seed": 12,
+        "ideal_kappa0": {
+          "log_likelihood": -18706.54606640524,
+          "amplitude": 0.4145171,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19653.337870154577,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19495.279180526555,
+          "amplitude": 0.415017,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.42333984375,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.42333984375
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7454833984375
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1329345703125
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0125732421875
+          },
+          {
+            "m": 8,
+            "p_hat": 0.392822265625
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4208984375
+          },
+          {
+            "m": 1,
+            "p_hat": 0.750732421875
+          },
+          {
+            "m": 2,
+            "p_hat": 0.123046875
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0
+          },
+          {
+            "m": 8,
+            "p_hat": 0.388671875
+          }
+        ]
+      },
+      {
+        "seed": 13,
+        "ideal_kappa0": {
+          "log_likelihood": -18808.79542906919,
+          "amplitude": 0.4145171,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19728.95232738425,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19562.903080558095,
+          "amplitude": 0.415017,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.4246826171875,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4246826171875
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7474365234375
+          },
+          {
+            "m": 2,
+            "p_hat": 0.13720703125
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0128173828125
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3946533203125
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4232177734375
+          },
+          {
+            "m": 1,
+            "p_hat": 0.752685546875
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1287841796875
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0001220703125
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3917236328125
+          }
+        ]
+      },
+      {
+        "seed": 14,
+        "ideal_kappa0": {
+          "log_likelihood": -18702.831202271285,
+          "amplitude": 0.4155169,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19528.625602101405,
+          "amplitude": 0.41851630000000006,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19401.60433312894,
+          "amplitude": 0.4155169,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.41162109375,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.41162109375
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7392578125
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1292724609375
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0123291015625
+          },
+          {
+            "m": 8,
+            "p_hat": 0.37939453125
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.409423828125
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7420654296875
+          },
+          {
+            "m": 2,
+            "p_hat": 0.12109375
+          },
+          {
+            "m": 4,
+            "p_hat": 0.00048828125
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3759765625
+          }
+        ]
+      },
+      {
+        "seed": 15,
+        "ideal_kappa0": {
+          "log_likelihood": -18627.3728256669,
+          "amplitude": 0.4155169,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19512.00496993489,
+          "amplitude": 0.41851630000000006,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19373.93969755437,
+          "amplitude": 0.4155169,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.40771484375,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.40771484375
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7396240234375
+          },
+          {
+            "m": 2,
+            "p_hat": 0.127197265625
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0128173828125
+          },
+          {
+            "m": 8,
+            "p_hat": 0.380126953125
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4051513671875
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7437744140625
+          },
+          {
+            "m": 2,
+            "p_hat": 0.117919921875
+          },
+          {
+            "m": 4,
+            "p_hat": 0.00048828125
+          },
+          {
+            "m": 8,
+            "p_hat": 0.37646484375
+          }
+        ]
+      },
+      {
+        "seed": 16,
+        "ideal_kappa0": {
+          "log_likelihood": -18730.259402734133,
+          "amplitude": 0.415017,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19473.137747496883,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19371.558668907026,
+          "amplitude": 0.4155169,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.4102783203125,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4102783203125
+          },
+          {
+            "m": 1,
+            "p_hat": 0.736083984375
+          },
+          {
+            "m": 2,
+            "p_hat": 0.12841796875
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0108642578125
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3809814453125
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.40966796875
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7408447265625
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1221923828125
+          },
+          {
+            "m": 4,
+            "p_hat": 0.000244140625
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3795166015625
+          }
+        ]
+      },
+      {
+        "seed": 17,
+        "ideal_kappa0": {
+          "log_likelihood": -18778.915262554678,
+          "amplitude": 0.4155169,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19649.828347575432,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19503.084220754205,
+          "amplitude": 0.4155169,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.416748046875,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.416748046875
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7459716796875
+          },
+          {
+            "m": 2,
+            "p_hat": 0.13623046875
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0126953125
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3861083984375
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4139404296875
+          },
+          {
+            "m": 1,
+            "p_hat": 0.7501220703125
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1268310546875
+          },
+          {
+            "m": 4,
+            "p_hat": 0.000732421875
+          },
+          {
+            "m": 8,
+            "p_hat": 0.38232421875
+          }
+        ]
+      },
+      {
+        "seed": 18,
+        "ideal_kappa0": {
+          "log_likelihood": -18792.843022175362,
+          "amplitude": 0.415017,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19628.13497562783,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19488.43609483014,
+          "amplitude": 0.415017,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.42138671875,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.42138671875
+          },
+          {
+            "m": 1,
+            "p_hat": 0.741943359375
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1328125
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0120849609375
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3887939453125
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4210205078125
+          },
+          {
+            "m": 1,
+            "p_hat": 0.74755859375
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1243896484375
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0006103515625
+          },
+          {
+            "m": 8,
+            "p_hat": 0.3870849609375
+          }
+        ]
+      },
+      {
+        "seed": 19,
+        "ideal_kappa0": {
+          "log_likelihood": -18703.096450856243,
+          "amplitude": 0.415017,
+          "kappa": 0.0
+        },
+        "noisy_kappa0": {
+          "log_likelihood": -19536.147906313425,
+          "amplitude": 0.41801640000000007,
+          "kappa": 0.0
+        },
+        "noisy_tanaka": {
+          "log_likelihood": -19409.016094597737,
+          "amplitude": 0.4155169,
+          "kappa": 0.01
+        },
+        "noisy_classical_m0": 0.4168701171875,
+        "noisy_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4168701171875
+          },
+          {
+            "m": 1,
+            "p_hat": 0.74169921875
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1298828125
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0118408203125
+          },
+          {
+            "m": 8,
+            "p_hat": 0.384521484375
+          }
+        ],
+        "ideal_frequencies": [
+          {
+            "m": 0,
+            "p_hat": 0.4156494140625
+          },
+          {
+            "m": 1,
+            "p_hat": 0.745849609375
+          },
+          {
+            "m": 2,
+            "p_hat": 0.1221923828125
+          },
+          {
+            "m": 4,
+            "p_hat": 0.0001220703125
+          },
+          {
+            "m": 8,
+            "p_hat": 0.381591796875
+          }
+        ]
+      }
+    ]
+  },
+  "canonical": {
+    "amplitude": 0.41501642854987947,
+    "shots": 8192,
+    "by_phase_bits": {
+      "2": {
+        "phase_bins": 4,
+        "brassard_bound": 1.3908206831215328,
+        "exact_success_probability": 1.0,
+        "noisy_fraction_inside_bar": 1.0,
+        "ideal_median_abs_error": 0.08498357145012042,
+        "noisy_median_abs_error": 0.08498357145012042,
+        "ideal_median_tv": 0.00413672095499712,
+        "runs": [
+          {
+            "seed": 0,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.0029433571700028796,
+            "noisy_counts": {
+              "01": 3903,
+              "10": 168,
+              "00": 223,
+              "11": 3898
+            }
+          },
+          {
+            "seed": 1,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.0023995718531709407,
+            "noisy_counts": {
+              "01": 3919,
+              "00": 220,
+              "10": 164,
+              "11": 3889
+            }
+          },
+          {
+            "seed": 2,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.007650311729664488,
+            "noisy_counts": {
+              "00": 233,
+              "10": 170,
+              "11": 3829,
+              "01": 3960
+            }
+          },
+          {
+            "seed": 3,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.00892480248250288,
+            "noisy_counts": {
+              "10": 197,
+              "00": 229,
+              "11": 3805,
+              "01": 3961
+            }
+          },
+          {
+            "seed": 4,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.004354413292164488,
+            "noisy_counts": {
+              "00": 237,
+              "11": 3837,
+              "10": 180,
+              "01": 3938
+            }
+          },
+          {
+            "seed": 5,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.0030935922093290593,
+            "noisy_counts": {
+              "00": 245,
+              "10": 170,
+              "11": 3907,
+              "01": 3870
+            }
+          },
+          {
+            "seed": 6,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.00413672095499712,
+            "noisy_counts": {
+              "01": 3888,
+              "10": 153,
+              "00": 228,
+              "11": 3923
+            }
+          },
+          {
+            "seed": 7,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.0004481632921644876,
+            "noisy_counts": {
+              "01": 3915,
+              "10": 183,
+              "00": 228,
+              "11": 3866
+            }
+          },
+          {
+            "seed": 8,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.007852617957835456,
+            "noisy_counts": {
+              "01": 3973,
+              "00": 216,
+              "10": 180,
+              "11": 3823
+            }
+          },
+          {
+            "seed": 9,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.0027273812718290593,
+            "noisy_counts": {
+              "01": 3852,
+              "10": 202,
+              "00": 249,
+              "11": 3889
+            }
+          }
+        ]
+      },
+      "3": {
+        "phase_bins": 8,
+        "brassard_bound": 0.5411977727937451,
+        "exact_success_probability": 0.9893560694602398,
+        "noisy_fraction_inside_bar": 1.0,
+        "ideal_median_abs_error": 0.08498357145012042,
+        "noisy_median_abs_error": 0.08498357145012042,
+        "ideal_median_tv": 0.0074961670065484725,
+        "runs": [
+          {
+            "seed": 0,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.006704555044441829,
+            "noisy_counts": {
+              "101": 197,
+              "011": 210,
+              "111": 385,
+              "001": 342,
+              "110": 3351,
+              "100": 177,
+              "000": 205,
+              "010": 3325
+            }
+          },
+          {
+            "seed": 1,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.009924505463660797,
+            "noisy_counts": {
+              "101": 208,
+              "100": 168,
+              "110": 3275,
+              "001": 340,
+              "111": 423,
+              "011": 238,
+              "000": 204,
+              "010": 3336
+            }
+          },
+          {
+            "seed": 2,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.014476431566322653,
+            "noisy_counts": {
+              "011": 225,
+              "111": 371,
+              "100": 154,
+              "110": 3285,
+              "001": 327,
+              "101": 189,
+              "000": 224,
+              "010": 3417
+            }
+          },
+          {
+            "seed": 3,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.011880010374304532,
+            "noisy_counts": {
+              "011": 222,
+              "111": 410,
+              "100": 161,
+              "110": 3245,
+              "001": 376,
+              "000": 199,
+              "010": 3374,
+              "101": 205
+            }
+          },
+          {
+            "seed": 4,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.005445666029095206,
+            "noisy_counts": {
+              "101": 184,
+              "011": 216,
+              "111": 394,
+              "100": 156,
+              "110": 3288,
+              "001": 346,
+              "000": 227,
+              "010": 3381
+            }
+          },
+          {
+            "seed": 5,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.006620175865889244,
+            "noisy_counts": {
+              "101": 170,
+              "011": 214,
+              "111": 375,
+              "100": 166,
+              "110": 3372,
+              "001": 343,
+              "000": 228,
+              "010": 3324
+            }
+          },
+          {
+            "seed": 6,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.00975631285694183,
+            "noisy_counts": {
+              "101": 203,
+              "111": 384,
+              "011": 219,
+              "000": 210,
+              "010": 3326,
+              "100": 160,
+              "001": 324,
+              "110": 3366
+            }
+          },
+          {
+            "seed": 7,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.005754995796145287,
+            "noisy_counts": {
+              "101": 163,
+              "011": 230,
+              "111": 406,
+              "001": 356,
+              "110": 3287,
+              "100": 155,
+              "000": 210,
+              "010": 3385
+            }
+          },
+          {
+            "seed": 8,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.0074961670065484725,
+            "noisy_counts": {
+              "011": 210,
+              "111": 391,
+              "100": 149,
+              "110": 3275,
+              "001": 377,
+              "101": 182,
+              "000": 193,
+              "010": 3415
+            }
+          },
+          {
+            "seed": 9,
+            "ideal_median": 0.4999999999999999,
+            "noisy_median": 0.4999999999999999,
+            "ideal_abs_error": 0.08498357145012042,
+            "noisy_abs_error": 0.08498357145012042,
+            "ideal_inside_bar": true,
+            "noisy_inside_bar": true,
+            "ideal_tv_to_exact": 0.005792686930092785,
+            "noisy_counts": {
+              "101": 178,
+              "011": 230,
+              "111": 392,
+              "001": 370,
+              "110": 3309,
+              "100": 147,
+              "000": 224,
+              "010": 3342
+            }
+          }
+        ]
+      }
+    }
+  },
+  "call_loader": {
+    "black_scholes": 8.021352235143176,
+    "discrete_grid_price": 8.008519905101343,
+    "marked_probability": 0.06771494089436943,
+    "scale": 118.26813697724515,
+    "shots": 8192,
+    "ideal_median_abs_error_vs_grid": 0.06177899263791886,
+    "noisy_median_abs_error_vs_grid": 4.825998377707609,
+    "noisy_median_abs_error_vs_bs": 4.813166047665776,
+    "runs": [
+      {
+        "seed": 0,
+        "ideal_price": 8.026987812420447,
+        "noisy_price": 12.877829368127768,
+        "ideal_abs_error_vs_bs": 0.005635577277271153,
+        "noisy_abs_error_vs_bs": 4.856477132984592,
+        "ideal_abs_error_vs_grid": 0.018467907319104526,
+        "noisy_abs_error_vs_grid": 4.8693094630264255,
+        "noisy_counts": {
+          "0": 7300,
+          "1": 892
+        }
+      },
+      {
+        "seed": 1,
+        "ideal_price": 8.185795125256103,
+        "noisy_price": 12.892266396567372,
+        "ideal_abs_error_vs_bs": 0.16444289011292668,
+        "noisy_abs_error_vs_bs": 4.870914161424196,
+        "ideal_abs_error_vs_grid": 0.17727522015476005,
+        "noisy_abs_error_vs_grid": 4.883746491466029,
+        "noisy_counts": {
+          "1": 893,
+          "0": 7299
+        }
+      },
+      {
+        "seed": 2,
+        "ideal_price": 7.868180499584791,
+        "noisy_price": 12.502466628698034,
+        "ideal_abs_error_vs_bs": 0.15317173555838526,
+        "noisy_abs_error_vs_bs": 4.481114393554858,
+        "ideal_abs_error_vs_grid": 0.14033940551655189,
+        "noisy_abs_error_vs_grid": 4.493946723596691,
+        "noisy_counts": {
+          "1": 866,
+          "0": 7326
+        }
+      },
+      {
+        "seed": 3,
+        "ideal_price": 7.983676727101631,
+        "noisy_price": 12.54577771401685,
+        "ideal_abs_error_vs_bs": 0.03767550804154496,
+        "noisy_abs_error_vs_bs": 4.524425478873674,
+        "ideal_abs_error_vs_grid": 0.024843177999711585,
+        "noisy_abs_error_vs_grid": 4.537257808915507,
+        "noisy_counts": {
+          "1": 869,
+          "0": 7323
+        }
+      },
+      {
+        "seed": 4,
+        "ideal_price": 8.070298897739262,
+        "noisy_price": 12.834518282808952,
+        "ideal_abs_error_vs_bs": 0.04894666259608549,
+        "noisy_abs_error_vs_bs": 4.813166047665776,
+        "ideal_abs_error_vs_grid": 0.06177899263791886,
+        "noisy_abs_error_vs_grid": 4.825998377707609,
+        "noisy_counts": {
+          "1": 889,
+          "0": 7303
+        }
+      }
+    ]
+  }
+}
