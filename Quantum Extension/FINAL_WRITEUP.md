@@ -5,60 +5,37 @@ date: "23 October 2026"
 fontsize: 10pt
 geometry: margin=0.8in
 colorlinks: false
+header-includes: |
+  \makeatletter
+  \renewcommand{\maketitle}{\begin{center}{\large\bfseries\@title\par}\smallskip\@author\quad---\quad\@date\end{center}\medskip}
+  \makeatother
+  \setlength{\LTpre}{3pt}
+  \setlength{\LTpost}{4pt}
+  \setlength{\parskip}{3pt}
 ---
 
-## Framing and reference values
+## Error budget and quadrature
 
-A certified estimate of a badly encoded amplitude is not a certified price or CVaR. This project connects my work on regime-conditional factor models with quantum amplitude estimation by asking a numerical-analysis question: which part of the final error does the estimator's a priori bar control? The examples separate the continuous or empirical target, its discrete encoding, and estimation of the encoded expectation. The interesting results are the size of each error contribution, a quadrature bias that survives refinement, and a noise bias that grows with circuit size. The calculations check a known algorithm; they do not constitute an interval-arithmetic proof or a new pricing method.
-
-The call has $S_0=100$, $K=105$, $r=0.05$, $\sigma=0.2$ and $T=1$ year. With $\Phi$ and $\phi$ the standard-normal distribution and density, its Black-Scholes value is
-
+A certified estimate of a badly encoded amplitude is not a certified price or CVaR. Linking my regime-conditional factor models to amplitude estimation, I separate target, encoding and estimation errors; no novelty, new pricing method or interval-arithmetic proof is claimed. For $S_0=100$, $K=105$, $r=0.05$, $\sigma=0.2$, $T=1$ year, and standard-normal distribution/density $\Phi,\phi$, the call and normal-loss references are
 $$
-C=S_0\Phi(d_1)-Ke^{-rT}\Phi(d_2)=8.0213522351,
-\qquad d_{1,2}=\frac{\log(S_0/K)+(r\pm\sigma^2/2)T}{\sigma\sqrt T}.
+C=S_0\Phi(d_1)-Ke^{-rT}\Phi(d_2)=8.0213522351,\qquad
+d_{1,2}=\frac{\log(S_0/K)+(r\pm\sigma^2/2)T}{\sigma\sqrt T},
 $$
-
-For a normal loss $L\sim N(\mu,\sigma_L^2)$, the second reference is
-
 $$
-q_\alpha=\mu+\sigma_L\Phi^{-1}(\alpha),\qquad
+L\sim N(\mu,\sigma_L^2):\quad q_\alpha=\mu+\sigma_L\Phi^{-1}(\alpha),\qquad
 \operatorname{CVaR}_\alpha(L)=\mu+\frac{\sigma_L\phi(\Phi^{-1}(\alpha))}{1-\alpha}.
 $$
-
-At $\mu=0$, $\sigma_L=1$ and $\alpha=0.95$, VaR is $1.6448536270$ and CVaR is $2.0627128075$, in standard-normal loss units. These formulas and parameters are implemented in `problems.py` and checked in `test_audit.py`; the fresh `run.py` output is saved in `verification/run_report.txt`.
-
-For masses $p_i$ and encoded values $0\le f_i\le1$, the marked probability is $a=\sum_i p_i f_i$. Canonical amplitude estimation returns $\widehat a=\sin^2(\pi k/t)$, where $t=2^m$ is the number of phase bins. The Brassard-Hoyer-Mosca-Tapp inequality used in `estimation.py` is
-
+At $\mu=0$, $\sigma_L=1$, $\alpha=0.95$: VaR $1.6448536270$, CVaR $2.0627128075$ (standard-normal loss units; `problems.py`, `test_audit.py`, fresh `run.py` output in `verification/run_report.txt`). For masses $p_i$, $0\le f_i\le1$, $a=\sum_i p_i f_i$, canonical estimation returns $\widehat a=\sin^2(\pi k/t)$, $t=2^m$ phase bins. In `estimation.py`, Brassard-Hoyer-Mosca-Tapp gives
 $$
-\Pr\!\left\{|\widehat a-a|\le B_t(a)\right\}\ge\frac8{\pi^2}=0.810569\ldots,
-\quad B_t(a)=\frac{2\pi\sqrt{a(1-a)}}{t}+\frac{\pi^2}{t^2}.
+\Pr\{|\widehat a-a|\le B_t(a)\}\ge\frac8{\pi^2}=0.810569\ldots,\qquad
+B_t(a)=\frac{2\pi\sqrt{a(1-a)}}t+\frac{\pi^2}{t^2}.
 $$
-
-This is an ideal-oracle, probabilistic a priori bound. Here the exact encoded $a$ is available for auditing. If it were unknown, the conservative bound $B_t(a)\le\pi/t+\pi^2/t^2$ follows from $a(1-a)\le1/4$; the plotted, amplitude-dependent bars are not confidence intervals inferred from observed shots. Multiplication by the payoff scale converts the amplitude bar to the units of the reported quantity. It does not bound quadrature, quantile, sampling or hardware error.
-
-At fixed success probability and fixed encoding, the ideal query improvement is quadratic: order $1/\epsilon$ oracle uses versus the usual Monte Carlo order $1/\epsilon^2$, not exponential. The controlled powers here use $Q$ a total of $t-1$ times. Loading data and compiling those powers also cost work. Statevector simulation supplies no wall-clock quantum speedup. Expectation and CVaR estimation are established applications: Montanaro (2015), Woerner and Egger (2019), and Tanaka et al. (2021) provide the relevant background; references are listed on the last page.
-
-\newpage
-
-## Quadrature: refinement changes only one part of the error
-
-Let $C_h=s a_h$ be the encoded grid price and $\widehat C_h=s\widehat a_h$ its amplitude estimate, with $s$ the discounted payoff maximum. Then
-
+This ideal-oracle, probabilistic a priori bar uses known encoded $a$; otherwise $a(1-a)\le1/4$ gives $B_t(a)\le\pi/t+\pi^2/t^2$. It is not a shot-derived interval; scaling converts units, not coverage of quadrature, quantile, sampling or hardware error. At fixed encoding/success probability, ideal query improvement is quadratic ($1/\epsilon$ versus Monte Carlo's $1/\epsilon^2$), not exponential: $t-1$ uses of $Q$, plus loading/compilation costs. Statevector simulation is not a wall-clock speedup. With discounted payoff maximum $s$, $C_h=sa_h$, $\widehat C_h=s\widehat a_h$:
 $$
-\widehat C_h-C=(\widehat C_h-C_h)+(C_h-C).
+\widehat C_h-C=(\widehat C_h-C_h)+(C_h-C),\quad
+C_h-C=(C_h-C_W)+(C_W-C).
 $$
-
-The first term is controlled by $s B_t(a_h)$ with the stated probability. The second is the deterministic encoding error. A price bound requires both terms. In this benchmark the closed form makes the second term measurable; it has not been enclosed by interval arithmetic.
-
-The uniform loader uses equally spaced **spot** nodes across a log-price window corresponding to standard-normal shocks in $[-4,4]$. Masses are proportional to the lognormal density and normalized to sum to one. Its limiting integral is therefore the windowed, renormalized expectation, $C_W=8.0177885991$. Splitting once more gives
-
-$$
-C_h-C=(C_h-C_W)+(C_W-C),\qquad C_W-C=-0.0035636360.
-$$
-
-Additional nodes can reduce $C_h-C_W$ but cannot remove the window bias. “Floor” here means the asymptotic absolute bias, not a lower bound on every finite-grid error. At 96 nodes the spot-grid error is only $0.00061609$ dollars: quadrature error temporarily cancels some window bias. At 256 nodes its price is $8.0178887418$, already close to the biased limit.
-
-Gauss-Hermite integrates over the full Gaussian domain. Its polynomial exactness does not make the call payoff smooth at the strike. The saved sweep shows both a worse 16-node result and non-monotone error with refinement. All prices and signed errors in the table are in dollars:
+Only estimation has bar $sB_t(a_h)$; price certification also needs encoding error, measured here against a closed form without interval enclosure. Uniform **spot** nodes spanning the range corresponding to shocks $[-4,4]$ use normalized lognormal-density masses: $C_W=8.0177885991$, bias $C_W-C=-0.0035636360$. The $\pm4\sigma$ window sets an asymptotic floor, not a finite-grid lower bound: cancellation gives $0.00061609$-dollar error at 96 nodes; at 256, price $8.0178887418$. Full-domain Gauss-Hermite is non-monotone on the strike kink despite polynomial exactness, and worse at 16 nodes. One small error proves neither convergence nor a general quadrature ranking.
 
 | Nodes | Gauss-Hermite price | Signed error | Uniform-grid price | Signed error |
 | ---: | ---: | ---: | ---: | ---: |
@@ -69,17 +46,13 @@ Gauss-Hermite integrates over the full Gaussian domain. Its polynomial exactness
 | 256 | 7.99900672 | -0.02234551 | 8.01788874 | -0.00346349 |
 | 512 | 8.01974650 | -0.00160574 | 8.01775543 | -0.00359680 |
 
-Source: `data/scale_sweep.json`, `classical`; errors are against Black-Scholes. This comparison concerns this payoff and these nodes, not a general ranking of quadrature rules. A small error at one node count is insufficient evidence of convergence, particularly when two signed contributions can cancel.
+Source: `data/scale_sweep.json`, `classical`; prices/signed errors in dollars versus Black-Scholes.
 
-The upper panels of `figures/scaling_methods.png` show these absolute errors and a separate Monte Carlo sweep. Monte Carlo uses 24 seeds at each path count. The dashed standard-error reference uses a payoff standard deviation estimated from a separate simulation; it is not a rigorous finite-sample confidence bound. Node count, path count and phase-bin count appear on separate axes because they are different computational budgets. The figure does not establish equal end-to-end costs.
+Figure 1 (`figures/scaling_methods.png`): `data/scale_sweep.json`, regenerated 23 October 2026; noisy panel: unmitigated 15 April 2026 FakeKingston/Aer simulation. Monte Carlo uses 24 seeds/path count and separately simulated payoff SD for its dashed standard-error reference, not a rigorous finite-sample bound; node/path/phase-bin budgets imply no equal end-to-end costs.
 
-Figure 1 caption: source `data/scale_sweep.json`, regenerated 23 October 2026; its noisy panel uses the 15 April 2026 FakeKingston calibration in Qiskit Aer, without mitigation, not live hardware.
+## Amplitude estimation against its bar
 
-\newpage
-
-## Amplitude estimation against its own bar
-
-For $a=\sin^2(0.7)=0.4150164285$, the statevector calculation gives the entire outcome distribution. “Median” below means its probability-weighted median, computed classically, not a single measurement or a median from an experimental repetition protocol.
+For $a=\sin^2(0.7)=0.4150164285$, medians are descriptive, classically computed probability-weighted medians of the exact statevector distribution, not shots or experimental repetitions. Success probabilities describe random outcomes: they may decrease as bars narrow; stationary phase-bin medians are not failures. The minimum remains above $8/\pi^2$.
 
 | Phase bins $t$ | Absolute median error | Amplitude bar | Probability inside bar |
 | ---: | ---: | ---: | ---: |
@@ -89,9 +62,7 @@ For $a=\sin^2(0.7)=0.4150164285$, the statevector calculation gives the entire o
 | 256 | 0.00049737 | 0.01224389 | 0.996277 |
 | 1024 | 0.00049737 | 0.00303273 | 0.949507 |
 
-The success probability can decrease while the bound narrows. The median can also remain on the same phase-bin value across refinements. These features are visible in the exact distribution; they are not simulation failures. The smallest probability in this table is still above $8/\pi^2$.
-
-The 16-node call has $a_h=0.0677149409$ and scale $s=118.268137$ dollars. The correct reference for its amplitude bar is the grid price $8.0085199051$, not Black-Scholes.
+The 16-node call uses $a_h=0.0677149409$, $s=118.268137$ dollars, and grid reference $8.0085199051$, not Black-Scholes. At $t=16$ its bar exceeds the price; at $t=1024$ the Black-Scholes error $+0.022486$ dollars combines positive estimation error and negative grid bias.
 
 | $t$ | Median price | Error vs grid | Price bar | Probability inside |
 | ---: | ---: | ---: | ---: | ---: |
@@ -100,19 +71,15 @@ The 16-node call has $a_h=0.0677149409$ and scale $s=118.268137$ dollars. The co
 | 256 | 7.682285 | -0.326235 | 0.747141 | 0.814712 |
 | 1024 | 8.043838 | +0.035319 | 0.183446 | 0.933545 |
 
-Source for both tables: `data/scale_sweep.json`, `amplitude_estimation`. Call prices, signed errors and bars are in dollars. At $t=16$ the bar is wider than the price itself. At $t=1024$, the median's Black-Scholes error is $+0.022486$ dollars, combining its positive grid-estimation error with the negative grid bias. The success probabilities concern a random phase-estimation outcome; the tabulated medians are descriptive summaries.
+Both tables: `data/scale_sweep.json`, `amplitude_estimation`; call prices, signed errors and bars in dollars.
 
-The seeded one-shot outcomes for this known amplitude and the call are inside their bars, but a miss is retained in the Gaussian CVaR example. With 20,000 losses, seed 11, and 32 bins, the exact histogram excess assembly is $2.0603234871$. At $t=16$, its median estimate is $3.2189159024$, its propagated bar is $3.245422$, and the seed-0 single shot is **outside** that bar. Its exact success probability is $0.858922$, consistent with the theorem. At $t=1024$, the median is $2.0606839698$ with bar $0.02604439$. These values and the miss are reproduced by `run.py` and protected by the existing audit.
+Known-amplitude/call seeded shots satisfy their bars; Gaussian CVaR retains its miss. For 20,000 losses, seed 11, 32 bins: excess assembly $2.0603234871$; $t=16$ median $3.2189159024$, bar $3.245422$, **seed-0 single shot outside its bar**, success probability $0.858922$, consistent with the theorem. At $t=1024$: median $2.0606839698$, bar $0.02604439$ (`run.py`, existing audit). No filtering or every-shot guarantee.
 
-The left panel of `figures/scaling_details.png` also retains the known-amplitude single-shot errors. There is no filtering of failed draws or replacement of a single-shot guarantee by a claim that every draw succeeds.
+Figure 2 (`figures/scaling_details.png`): `data/scale_sweep.json`, regenerated 23 October 2026; shots/legacy baseline retained, no-CZ panel: unmitigated 15 April 2026 FakeKingston/Aer simulation.
 
-Figure 2 caption: source `data/scale_sweep.json`, regenerated 23 October 2026; the no-CZ panel is unmitigated Aer simulation of the 15 April 2026 FakeKingston calibration, not live hardware.
+## Simulated noise
 
-\newpage
-
-## Simulated noise: a separate error contribution
-
-All noisy results use **FakeKingston, the ibm_kingston calibration snapshot dated 15 April 2026, in Qiskit Aer**. They are not live quantum-device measurements. No error mitigation is applied. `MEASUREMENTS.md` documents the snapshot and the earlier runs; the scaling table below uses the separate sweep in `data/scale_sweep.json`, averaging eight seeds with 4,096 shots each. These circuits prepare and measure the call loader without amplitude amplification.
+**FakeKingston is the ibm_kingston calibration snapshot of 15 April 2026 in Qiskit Aer, not live hardware; no mitigation.** This sweep (earlier runs: `MEASUREMENTS.md`) averages eight seeds, 4,096 shots each, without call-loader amplification. Shift from the grid grows with CZ count, alongside changing nodes/depth/compilation: no isolated CZ causality. More shots reduce fluctuations, not bias.
 
 | Spot nodes | CZ gates | Grid price | Ideal Aer mean | Noisy Aer mean | Noisy minus grid |
 | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -121,45 +88,21 @@ All noisy results use **FakeKingston, the ibm_kingston calibration snapshot date
 | 16 | 62 | 8.008520 | 7.860962 | 12.816472 | +4.807952 |
 | 32 | 132 | 7.983626 | 7.850134 | 17.761154 | +9.777529 |
 
-Prices and shifts are in dollars. The last column separates the observed mean shift from the grid bias. That shift grows with CZ count in this sweep. Node count, circuit depth and the compiled circuit also change, so this is not an experiment isolating CZ errors as the only cause. More shots would reduce sampling fluctuations without correcting the noise model's systematic displacement.
+Source: `data/scale_sweep.json`; prices and shifts in dollars.
 
-A simple diagnostic in `MEASUREMENTS.md` mixes the ideal marked probability with $1/2$. If $p$ is a representative CZ error and $g$ is the CZ count, set
+The rough CZ-survival check mixes with $1/2$: $w=(1-p)^g$, $a_{\mathrm{mix}}=wa+(1-w)/2$. For $p=0.0016$, $g=62$, $w\simeq0.9055$, $a=0.0677$: prediction $a_{\mathrm{mix}}\simeq0.109$, measured $0.108368$. Omitting relaxation/readout/individual-gate details, this is no fit, mechanism proof, bound or price adjustment. The one-qubit no-CZ control follows $\sin^2((2m+1)\theta)$, $\theta=0.7$: at $m=4$, ideal $0.00028271$, noisy $0.01234436$ (floor near a zero). Averaging 16 seeds, 4,096 shots each, largely preserves oscillations through $m=16$, without testing multiqubit preparation. Earlier canonical $t=4,8$ runs: ideal/noisy medians $1/2$, error $0.08498$, ideal bars $1.391,0.541$. Wide bars diagnose little; coarse medians hide distribution changes; the ideal theorem does not certify noise.
 
+**Established work:** Montanaro, [*Quantum speedup of Monte Carlo methods* (2015)](https://arxiv.org/abs/1504.06987); Woerner and Egger, [*Quantum risk analysis* (2019)](https://www.nature.com/articles/s41534-019-0130-6); Tanaka et al., [*Amplitude estimation via maximum likelihood on noisy quantum computer* (2021)](https://link.springer.com/article/10.1007/s11128-021-03215-9): prior work, no novelty claim.
+
+## Empirical CVaR, reproduction and an open question
+
+For loss = minus monthly return and $\alpha=0.95$, distinguish sample tail mean $S$, legacy comparator-selected histogram mean $H$, and excess assembly $D$. With sample quantile $q$, centers $c_i$, masses $p_i$:
 $$
-w=(1-p)^g,\qquad a_{\mathrm{mix}}=w a+(1-w)/2.
-$$
-
-For $p=0.0016$ and $g=62$, $w\simeq0.9055$, and $a=0.0677$ gives $a_{\mathrm{mix}}\simeq0.109$. The scaling sweep's measured noisy frequency is $0.108368$. This survival-and-mixing calculation is a rough consistency check, not a fitted channel model, a proof of mechanism, or an error bound. It omits details of relaxation, readout and the individual gates. It is not used to adjust any price.
-
-The one-qubit sequence is a useful control because it has no CZ gates. Its ideal marked probability is $\sin^2((2m+1)\theta)$ with $\theta=0.7$. In the scaling sweep, at $m=4$ the ideal probability is $0.00028271$ and the mean noisy frequency is $0.01234436$. Thus even this control has a visible noise floor near a zero of the ideal oscillation. Across the saved sequence, the oscillation largely survives. The sequence averages 16 seeds with 4,096 shots each and reaches $m=16$; it does not test multiqubit call-state preparation.
-
-The earlier canonical phase-estimation experiment in `MEASUREMENTS.md` is also cautionary: at $t=4$ and $t=8$, ideal and noisy median estimates both equal $1/2$. Their error against $\sin^2(0.7)$ is about $0.08498$, while the ideal bars are about $1.391$ and $0.541$. Passing such wide bars provides little diagnostic information, and the ideal theorem does not certify the noisy channel. Agreement of a coarse median can conceal changes in the outcome distribution.
-
-\newpage
-
-## Regime-conditional CVaR: distinguish the three targets
-
-The empirical application uses losses equal to minus monthly returns. At $\alpha=0.95$, the code retains three distinct quantities: the sample tail mean $S$, the legacy comparator-selected histogram mean $H$, and the histogram excess assembly $D$. With the sample quantile $q$, histogram centers $c_i$, and masses $p_i$, the amplitude routine estimates
-
-$$
-D=q+\frac{\sum_i p_i(c_i-q)_+}{1-\alpha},\qquad
-\widehat D=q+\frac{E_{\max}}{1-\alpha}\widehat a,
-\quad E_{\max}=\max_i(c_i-q)_+.
-$$
-
-Its bar is $E_{\max}B_t(a)/(1-\alpha)$. It controls $\widehat D-D$, conditional on the fixed sample quantile and encoding. The useful empirical decomposition is
-
-$$
+D=q+\frac{\sum_i p_i(c_i-q)_+}{1-\alpha},\quad
+\widehat D=q+\frac{E_{\max}}{1-\alpha}\widehat a,\quad E_{\max}=\max_i(c_i-q)_+,\quad
 \widehat D-S=(\widehat D-D)+(D-S).
 $$
-
-The second term combines binning with finite-sample threshold and tail-averaging conventions. `sample_cvar` averages observations at or above `numpy.quantile`'s threshold; that need not equal the empirical excess formula with divisor $1-\alpha$. Nor is the sample quantile necessarily the histogram's own quantile. Calling $D-S$ pure quantum error, or calling $D$ the exact histogram CVaR, would misstate the target. Population sampling error and regime-label uncertainty remain outside the displayed bar.
-
-The legacy $H$ stays deliberately unchanged. Its comparator uses width $(\mathrm{hi}-\mathrm{lo})/(2^n-1)$ while the histogram width is $(\mathrm{hi}-\mathrm{lo})/2^n$. On the Gaussian sample, the selected tail has mass $0.06835$ rather than $0.05$; $H=1.9303992869$, versus $S=2.0606125246$. It does not use the amplitude-estimation output. Estimating its selected-tail probability accurately cannot repair the returned conditional mean. The middle panel of Figure 2 preserves this baseline.
-
-The saved CRSP/Compustat panel contains 3,090,082 firm-months and 25,048 identifiers over 618 months, July 1973 through December 2024. `panel_cvar.py` forms equal-weighted size and book-to-market quintile portfolios using NYSE breakpoints and requires at least ten names per portfolio month. Each reported quintile has 221 high-volatility and 385 low-volatility months. Delisting returns are absent from the local pull. These are descriptive conditional samples, not out-of-sample risk guarantees.
-
-Selected portfolio results from `data/panel_cvar.json`, in **percent monthly loss**; the bar is in **percentage points**, at $t=1024$:
+The bar $E_{\max}B_t(a)/(1-\alpha)$ covers only $\widehat D-D$ at fixed $q$/encoding, not population sampling or regime-label uncertainty. $D-S$ combines binning and finite-sample threshold/tail conventions: `sample_cvar` averages observations at/above `numpy.quantile`'s threshold, not necessarily the excess formula with divisor $1-\alpha$; $q$ need not be the histogram quantile. Hence $D-S$ is not pure quantum error, nor $D$ exact histogram CVaR. **Legacy $H$ is deliberately unchanged: a comparator mismatch**, using width $(\mathrm{hi}-\mathrm{lo})/(2^n-1)$ versus histogram width $(\mathrm{hi}-\mathrm{lo})/2^n$. Gaussian selected-tail mass: $0.06835$, not $0.05$; $H=1.9303992869$, $S=2.0606125246$. Because $H$ ignores amplitude output, accurate tail-probability estimation cannot repair it (Figure 2). `panel_cvar.py`: 3,090,082 firm-months, 25,048 identifiers, 618 months (July 1973 through December 2024); equal-weighted size/book-to-market quintiles, NYSE breakpoints, at least ten names/month, 221 high-/385 low-volatility months each. Delisting returns are missing; these descriptive conditional samples give no out-of-sample guarantee. At $t=1024$, all 20 medians meet bars against $D$, but only seven sample $S$ values occupy those AE-centered intervals: no population coverage claim.
 
 | Portfolio / regime | Sample $S$ | Legacy $H$ | Excess $D$ | AE median $\widehat D$ | AE bar |
 | :--- | ---: | ---: | ---: | ---: | ---: |
@@ -167,17 +110,11 @@ Selected portfolio results from `data/panel_cvar.json`, in **percent monthly los
 | Size Q1 / low | 9.34103 | 8.44610 | 9.40425 | 9.44051 | 0.12100 |
 | Book/market Q5 / high | 17.10908 | 14.52532 | 17.57854 | 17.48918 | 0.29696 |
 
-All 20 portfolio medians at this $t$ are inside their bars relative to $D$. Only seven of the sample values $S$ lie in those same AE-centered intervals. The distinction is visible without claiming any population coverage. `figures/panel_cvar.png` shows sample $S$ for all quintiles, with no inferred confidence intervals.
+Source: `data/panel_cvar.json`; $t=1024$, percent monthly loss, bars in percentage points.
 
-Figure 3 caption: source `data/panel_cvar.json`, July 1973-December 2024 panel; regenerated 23 October 2026; equal-weighted portfolio losses, split by the saved volatility labels.
+Figure 3 (`figures/panel_cvar.png`): `data/panel_cvar.json`, July 1973-December 2024, regenerated 23 October 2026; equal-weighted $S$, all quintiles/saved regimes, no inferred confidence intervals.
 
-\newpage
-
-## Market series, reproduction and the remaining question
-
-The market calculation in `market_check.py` applies the same decomposition to loss $=-\mathrm{mktrf}$, the stored monthly market excess return. Its 634 labeled months comprise 223 high-volatility and 411 low-volatility months. These are not the same eligible windows as the CRSP quintile portfolios. With no closed-form population reference, the bar still concerns only the fixed histogram excess assembly.
-
-From `data/market_regimes.json`, in **percent monthly excess-return loss**; bars are **percentage points**, at $t=1024$:
+`market_check.py` uses loss $=-\mathrm{mktrf}$ (stored monthly market excess return), with 634 labeled months: 223 high, 411 low. These windows differ from the quintile windows; without a population closed form, the same bar covers only fixed $D$.
 
 | Regime | Months | Sample $S$ | Legacy $H$ | Excess $D$ | AE median | AE bar |
 | :--- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -185,14 +122,10 @@ From `data/market_regimes.json`, in **percent monthly excess-return loss**; bars
 | High volatility | 223 | 13.14417 | 13.16031 | 13.40383 | 13.37826 | 0.18181 |
 | Low volatility | 411 | 7.56905 | 7.40225 | 7.62960 | 7.66911 | 0.09236 |
 
-For example, high-volatility $D-S$ is about $0.25966$ percentage points, while the median's error against $D$ is about $-0.02557$ points. The amplitude bar does not cover the larger target mismatch. Both the high- and low-volatility sample values fall outside the corresponding AE-centered bars, even though their AE medians meet the bound against $D$.
+Source: `data/market_regimes.json`; $t=1024$, percent monthly excess-return loss, bars in percentage points.
 
-The panel also contains firm-level results for histories with at least 60 months in a regime. The amplitude summary comprises 17,468 **firm-regime pairs**, not distinct firms, at $t=256$. Every recorded median lies inside its bar; the median propagated bar is $0.01072510$ in decimal monthly-loss units, or $1.07251$ percentage points. This is an audit of the exact distributions' medians, not an empirical single-shot coverage rate.
+High-volatility target mismatch $D-S\simeq0.25966$ points versus median error $-0.02557$ points: both high/low sample values fall outside AE-centered bars although AE medians meet bars against $D$. The AE summary covers 17,468 **firm-regime pairs**, not unique firms, with at least 60 months/regime, at $t=256$: every median inside its bar; median bar $0.01072510$ decimal monthly loss = $1.07251$ percentage points, not empirical single-shot coverage. Big Red 200 job **8688102**, 22 October 2026 (`BIGRED_RUN.md`), reran `panel_cvar.py --firm-ae` on AMD EPYC: `.out` records cluster path/matching results, `.err` is empty. Big Red reproduced the Mac on a second architecture at reporting precision (maximum absolute JSON difference $1.33\times10^{-15}$), not literal “last digit” identity. Provenance is the run record, not stale `machine: local Mac`. It did not make the noise more real or the math faster.
 
-IU Big Red 200 job **8688102**, dated 22 October 2026 in `BIGRED_RUN.md`, reran `panel_cvar.py --firm-ae` on the AMD EPYC system. The saved `.out` records the cluster output path and matching reported panel results; the `.err` is empty. A direct comparison of the two saved JSONs finds agreement at reported precision, with a maximum absolute numeric difference of $1.33\times10^{-15}$. Thus the note's “last digit” description should be understood at reporting precision, not as literal JSON identity. The cluster JSON still says `machine: local Mac`; job provenance comes from the run record, not that field. Big Red reproduced the calculation on a second architecture. It did not make the noise more real or demonstrate faster mathematics.
+Could an Evans-function/winding-number viewpoint organize this error bar by identifying the certified object and whether perturbations preserve its conclusion, as in a Rouche argument? Added value beyond the decomposition is unknown: a question, not a claimed connection or implemented Evans function.
 
-Could an Evans-function or winding-number viewpoint offer a useful way to organize an estimator's error bar: first identify the object being certified, then determine whether numerical perturbations preserve the conclusion, in the spirit of a Rouche argument? I do not know whether that viewpoint yields anything beyond the decomposition here. This is a question for discussion, not a claimed connection or an implemented Evans function.
-
-**Verification and sources.** On 23 October 2026, the existing numerical audit passed all 13 tests and the Qiskit audit passed all five. A fresh `scale_sweep.py` execution, redirected to a separate verification file, reproduced the saved sweep JSON exactly. `plot_scale.py` regenerated both scaling figures from the preserved JSON; `plot_panel.py` generated the sole additional figure. Protected data, tests and existing logs were checked by SHA-256. The local numerical sources are `NOTE.md`, `MEASUREMENTS.md`, the three application/sweep JSONs, `problems.py`, `estimation.py`, `run.py`, and the Big Red record. No underlying panel data were regenerated.
-
-**Established work.** Montanaro, [*Quantum speedup of Monte Carlo methods* (2015)](https://arxiv.org/abs/1504.06987); Woerner and Egger, [*Quantum risk analysis* (2019)](https://www.nature.com/articles/s41534-019-0130-6); Tanaka et al., [*Amplitude estimation via maximum likelihood on noisy quantum computer* (2021)](https://link.springer.com/article/10.1007/s11128-021-03215-9). These references establish prior work, not novelty for the calculations reported here.
+**Verified 23 October 2026:** 13 numerical/five Qiskit tests passed; redirected `scale_sweep.py` matched saved JSON exactly; `plot_scale.py` regenerated both figures, `plot_panel.py` the sole addition; SHA-256 checked protected data/tests/logs; no panel regeneration. Sources: `NOTE.md`, `MEASUREMENTS.md`, three application/sweep JSONs, `problems.py`, `estimation.py`, `run.py`, Big Red record.
