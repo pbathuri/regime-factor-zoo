@@ -1,0 +1,116 @@
+"Quantum Extension/panel_cvar.py"
+  s_db8d8c31ab7390::t_0dc4e3f862074b 1-322
+"Quantum Extension/bigred_panel.sbatch"
+  s_db8d8c31ab7390::t_9e20853c25ffc7 12-16
+  s_db8d8c31ab7390::t_b0fed0d3271ab5 1-11,17-23,26-27,29
+  s_db8d8c31ab7390::t_d21781611fcb8d 25,28
+  s_db8d8c31ab7390::t_50b89a2f8dc6b7 24
+"Quantum Extension/verification/final_checks.json"
+  s_f2ae1478a7d676::t_85d379a6eab19f 1-10
+"Quantum Extension/BIGRED_RUN.md"
+  s_db8d8c31ab7390::t_c3c70b5a4c44a0 1-25
+"Quantum Extension/.gitignore"
+  s_db8d8c31ab7390::t_f91ce8a40273d5 1-4
+"Quantum Extension/verification/test_qiskit_audit.txt"
+  s_f2ae1478a7d676::t_630271ccf33275 1-5
+"Quantum Extension/FINAL_WRITEUP.md"
+  s_f2ae1478a7d676::t_93ef4949025c03 1-60,62,64-95,97-102,104-116,118-123,125-131,133-198
+  s_f2ae1478a7d676::t_6df0302043666f 61,63,96,103,117,124,132
+"Quantum Extension/plot_panel.py"
+  s_f2ae1478a7d676::t_9b7d073f318949 1-37,39-53
+  s_f2ae1478a7d676::t_ee944fd3860edf 38
+"Quantum Extension/verification/sweep_comparison.json"
+  s_d2d59f01215fae::t_6a4cf2347455dc 1-4
+"Quantum Extension/README.md"
+  s_db8d8c31ab7390::t_076b7572065ade 9-10
+  s_db8d8c31ab7390::t_9b5600f665a0f4 1-8,11-25
+"Quantum Extension/verification/scale_sweep_rerun.json"
+  s_d2d59f01215fae::t_9d35f7173fad61 1-529
+"Quantum Extension/DRAFT_EMAIL.md"
+  s_f2ae1478a7d676::t_93ef4949025c03 1-13
+"Quantum Extension/verification/run_report.txt"
+  s_f2ae1478a7d676::t_e2dc589b97348c 1-52
+"Quantum Extension/verification/test_audit.txt"
+  s_f2ae1478a7d676::t_44bdc87ee4d0f7 1-5
+README.md
+  s_db8d8c31ab7390::t_752793377a0bf3 38-42,47
+  s_db8d8c31ab7390::t_156c5971ab4b0f 43-46
+"Quantum Extension/market_check.py"
+  s_db8d8c31ab7390::t_b6e4f111049abd 1-97
+"Quantum Extension/verification/protected_files_sha256.json"
+  s_f2ae1478a7d676::t_27cc4a3b8f1107 1-11
+.gitignore
+  s_db8d8c31ab7390::t_c0fdb3603c71cb 26
+"Quantum Extension/MEASUREMENTS.md"
+  s_db8d8c31ab7390::t_e964b9ff435f8a 1-62
+"Quantum Extension/NOTE.md"
+  s_db8d8c31ab7390::t_3f72628617096e 1-93
+"Quantum Extension/circuits.py"
+  s_db8d8c31ab7390::t_f1dbf99d42a21c 1-74
+"Quantum Extension/data/kingston_snapshot.json"
+  s_db8d8c31ab7390::t_2da793045e53e3 1-1903
+"Quantum Extension/data/market_regimes.json"
+  s_db8d8c31ab7390::t_6b9e12ba691c5a 1-142
+"Quantum Extension/data/panel_cvar.json"
+  s_db8d8c31ab7390::t_3ba5ca4a360fa9 1-1039
+"Quantum Extension/data/scale_sweep.json"
+  s_db8d8c31ab7390::t_65cdff59e40de0 1-529
+"Quantum Extension/estimation.py"
+  s_db8d8c31ab7390::t_54408bdadb3cef 1-172
+"Quantum Extension/likelihood.py"
+  s_db8d8c31ab7390::t_bc8251b8a5ef46 1-62
+"Quantum Extension/plot_scale.py"
+  s_d2d59f01215fae::t_331705407d25c4 1-126
+"Quantum Extension/problems.py"
+  s_db8d8c31ab7390::t_606c790eb666f0 1-252
+"Quantum Extension/requirements.txt"
+  s_db8d8c31ab7390::t_a9eb944e1b8dfe 1-5
+"Quantum Extension/run.py"
+  s_db8d8c31ab7390::t_afba39a70f3422 1-187
+"Quantum Extension/run_device.py"
+  s_db8d8c31ab7390::t_458b66344d5f03 1-350
+"Quantum Extension/scale_sweep.py"
+  s_db8d8c31ab7390::t_3c38ecde1fe077 1-257
+"Quantum Extension/test_audit.py"
+  s_db8d8c31ab7390::t_f8224521aa5d48 1-169
+"Quantum Extension/test_qiskit_audit.py"
+  s_db8d8c31ab7390::t_3c64626203f45d 1-84
+"Quantum Extension/verification/README.md"
+  s_d2d59f01215fae::t_6a97364d6a00d8 1-54
+"Quantum Extension/bigred_out/panel_cvar.json"
+  s_db8d8c31ab7390::t_84b005d6b126db 1-1039
+"Quantum Extension/bigred_out/panel_cvar_8688102.out"
+  s_db8d8c31ab7390::t_a72236f4ff0d9e 1-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "43ed75780d806018e2c66dd5663597bfb491de6c",
+  "prompts": {},
+  "sessions": {
+    "s_d2d59f01215fae": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a16be8-e262-7953-abde-4c5c849fd22e",
+        "model": "unknown"
+      },
+      "human_author": "pbathuri <taaffeite.aart@gmail.com>"
+    },
+    "s_db8d8c31ab7390": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a153a79c-36c9-4dec-bd76-a2377ae44033",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "pbathuri <taaffeite.aart@gmail.com>"
+    },
+    "s_f2ae1478a7d676": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a16be8-e262-7953-abde-4c5c849fd22e",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "pbathuri <taaffeite.aart@gmail.com>"
+    }
+  }
+}
